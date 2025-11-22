@@ -1,0 +1,135 @@
+/*
+  common-base.css — Base/reset and common utilities
+  Purpose: remove extra whitespace around the page, provide sensible defaults
+  and small utility classes every site benefits from.
+
+  Usage:
+  - Link from HTML (recommended):
+      <link rel="stylesheet" href="/css/common-base.css">
+
+  - Or import from another CSS file (not recommended for performance):
+      @import url("../css/common-base.css");
+
+*/
+
+/* 1) Basic reset to remove extra white space around the site */
+/* Remove default margin/padding and ensure full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Use border-box everywhere (easier layout math) */
+:root {
+  box-sizing: border-box;
+  --max-content-width: 1200px;
+  --content-padding: 1rem;
+  --bg: #ffffff;
+  --text: #111314;
+  --muted: #6b7280;
+  --accent: #2563eb;
+}
+*, *::before, *::after { box-sizing: inherit; }
+
+/* 2) Document-level sensible defaults */
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+  min-height: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Remove default spacing for common elements so layout is fully controlled */
+h1,h2,h3,h4,h5,h6,p,ul,ol,figure,blockquote,dl,dd { margin: 0; padding: 0; }
+
+/* Images and media scale to container */
+img, picture, video, svg { display: block; max-width: 100%; height: auto; }
+
+/* Links */
+a { color: var(--accent); text-decoration: none; }
+a:focus, a:hover { text-decoration: underline; }
+
+/* Headings default sizes (adjust as needed) */
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+
+/* 3) Layout helpers */
+.container {
+  width: 100%;
+  max-width: var(--max-content-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--content-padding);
+  padding-right: var(--content-padding);
+}
+
+.stack > * + * { margin-top: 1rem; }
+.stack-sm > * + * { margin-top: 0.5rem; }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.col { flex: 1 1 0%; }
+
+/* Simple grid */
+.grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+
+/* 4) Buttons and inputs */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.form-input, .form-textarea, select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: #fff;
+}
+
+/* 5) Accessibility helpers */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
+
+/* Visually hidden but available to screen readers */
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute !important; clip: rect(1px, 1px, 1px, 1px);
+  width: 1px; height: 1px; overflow: hidden;
+}
+
+/* 6) Small utilities */
+.text-center { text-align: center; }
+.muted { color: var(--muted); }
+.lead { font-size: 1.125rem; color: var(--muted); }
+
+/* 7) Media queries (tiny responsive adjustments) */
+@media (min-width: 768px) {
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+}
+
+/* End of common-base.css */
