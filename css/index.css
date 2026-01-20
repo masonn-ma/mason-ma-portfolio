@@ -1,0 +1,66 @@
+:root {
+    --shadow-default:
+        0 1px 3px rgba(0, 0, 0, 0.08),
+        0 4px 12px rgba(0, 0, 0, 0.12);
+
+    --border-default: 1.5px solid #111827;
+    --default-black: #111827;
+    --grey-nav: #3f3f46;
+}
+
+a {
+    color: inherit;
+    /* uses parent text color */
+    text-decoration: none;
+    /* removes underline */
+}
+
+section {
+    height: 100vh;
+}
+
+.no-list-style {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.shadow {
+    box-shadow: var(--shadow-default);
+}
+
+#navbar {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    transition:
+        background-color 250ms ease,
+        box-shadow 250ms ease,
+        transform 250ms ease,
+        padding 250ms ease;
+}
+
+#navbar.scrolled {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    /* visual changes */
+    background-color: var(--grey-nav);
+    box-shadow: var(--shadow-default);
+    transform: translateY(0);
+}
+
+#navbar>ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    width: 100%;
+    gap: 5rem;
+    font-weight: bold;
+}
