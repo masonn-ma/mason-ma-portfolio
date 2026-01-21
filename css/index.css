@@ -3,6 +3,10 @@
         0 1px 3px rgba(0, 0, 0, 0.08),
         0 4px 12px rgba(0, 0, 0, 0.12);
 
+    --side-nav-transition:
+        opacity 250ms ease,
+        transform 250ms ease;
+
     --border-default: 1.5px solid #111827;
     --default-black: #111827;
     --grey-nav: #3f3f46;
@@ -19,6 +23,10 @@ section {
     height: 100vh;
 }
 
+section:first-child {
+    height: calc(100vh - 4rem);
+}
+
 .no-list-style {
     list-style-type: none;
     padding: 0;
@@ -29,17 +37,14 @@ section {
     box-shadow: var(--shadow-default);
 }
 
+
 #navbar {
     top: 0;
     left: 0;
     width: 100%;
+    height: 4rem;
     z-index: 1000;
-
-    transition:
-        background-color 250ms ease,
-        box-shadow 250ms ease,
-        transform 250ms ease,
-        padding 250ms ease;
+    background-color: var(--grey-nav);
 }
 
 #navbar.scrolled {
@@ -59,8 +64,49 @@ section {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 4rem;
-    width: 100%;
+    height: inherit;
+    width: inherit;
     gap: 5rem;
     font-weight: bold;
+}
+
+#side-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: 100vh;
+
+    opacity: 0;
+    transform: translateX(-16px);
+    pointer-events: none;
+
+    transition: var(--side-nav-transition);
+    z-index: 999;
+}
+
+#side-navbar.visible {
+    opacity: 1;
+
+    transition: var(--side-nav-transition);
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+#side-navbar>ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    width: inherit;
+    gap: 3rem;
+    font-weight: bold;
+    background: transparent;
+}
+
+#hero {
+    background-image: url(../assets/imgs/home-bg.webp);
+    background-size: cover;
+    background-position: center;
 }
