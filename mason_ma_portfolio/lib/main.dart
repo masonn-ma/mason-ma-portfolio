@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const MainContent(),
+                const MainContentBlock(),
                 const SizedBox(height: 24),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -52,8 +52,8 @@ class HomePage extends StatelessWidget {
   }
 }
 
-class MainContent extends StatelessWidget {
-  const MainContent({Key? key}) : super(key: key);
+class MainContentBlock extends StatelessWidget {
+  const MainContentBlock({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -71,8 +71,18 @@ class MainContent extends StatelessWidget {
           ),
         ],
       ),
-      child: Padding(
-        padding: const EdgeInsets.all(24.0),
+      child: const MainContent()
+    );
+  }
+}
+
+class MainContent extends StatelessWidget {
+  const MainContent({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(24.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -93,7 +103,6 @@ class MainContent extends StatelessWidget {
             ElevatedButton(onPressed: () {}, child: const Text('View My Work')),
           ],
         ),
-      ),
     );
   }
 }
