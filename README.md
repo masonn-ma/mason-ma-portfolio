@@ -8,7 +8,7 @@
 
 ## Live Demo
 
-🔗 https://your-username.github.io/repo-name/
+🔗 [https://your-username.github.io/repo-name/](Mason Ma's Portfolio)
 
 ## Snapshot
 
