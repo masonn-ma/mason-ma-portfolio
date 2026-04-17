@@ -1,12 +1,14 @@
 const heroNetworkCanvas = document.getElementById('hero-network');
 
 if (heroNetworkCanvas) {
+    const heroSection = heroNetworkCanvas.closest('header');
     const ctx = heroNetworkCanvas.getContext('2d');
     const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let particles = [];
     let canvasWidth = 0;
     let canvasHeight = 0;
     let animationFrameId = null;
+    let scrollFrameId = null;
 
     const createParticle = () => ({
         x: Math.random() * canvasWidth,
@@ -86,16 +88,73 @@ if (heroNetworkCanvas) {
         setCanvasSize();
         drawScene();
     });
+
+    const updateHeroVisibility = () => {
+        const hideThreshold = window.innerHeight * 0.18;
+        const shouldHideHeroContent = window.scrollY > hideThreshold;
+
+        if (heroSection) {
+            heroSection.classList.toggle('hero-content-hidden', shouldHideHeroContent);
+        }
+
+        scrollFrameId = null;
+    };
+
+    window.addEventListener('scroll', () => {
+        if (scrollFrameId) {
+            return;
+        }
+
+        scrollFrameId = window.requestAnimationFrame(updateHeroVisibility);
+    }, { passive: true });
+
+    updateHeroVisibility();
 }
 
-const gallery = document.querySelectorAll('.gallery img');
+const galleryItems = document.querySelectorAll('.gallery-item');
+const galleryImgs = document.querySelectorAll('.gallery-img');
 const lightbox = document.getElementById('lightbox');
 const lightboxImage = document.getElementById('lightbox-image');
 
-gallery.forEach(img => {
-    img.addEventListener('click', () => {
+// Lazy loading with Intersection Observer
+const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const img = entry.target;
+            const src = img.dataset.src;
+
+            img.classList.add('loading');
+
+            const tempImg = new Image();
+            tempImg.onload = () => {
+                img.src = src;
+                img.classList.remove('loading');
+                img.classList.add('loaded');
+                observer.unobserve(img);
+            };
+            tempImg.onerror = () => {
+                img.classList.remove('loading');
+                observer.unobserve(img);
+            };
+            tempImg.src = src;
+        }
+    });
+}, {
+    rootMargin: '50px'
+});
+
+galleryImgs.forEach(img => {
+    imageObserver.observe(img);
+});
+
+// Lightbox functionality
+galleryItems.forEach(item => {
+    const img = item.querySelector('.gallery-img');
+    item.addEventListener('click', () => {
         lightboxImage.src = img.src;
         lightboxImage.alt = img.alt;
+        const caption = img.dataset.caption || img.alt;
+        lightboxImage.dataset.caption = caption;
         lightbox.classList.add('active');
         document.body.style.overflow = 'hidden';
     });
@@ -117,3 +176,76 @@ document.addEventListener('keydown', (e) => {
         closeLightbox();
     }
 });
+
+// Card skeleton loader
+const cards = document.querySelectorAll('.card');
+cards.forEach((card, index) => {
+    card.classList.add('loading');
+
+    setTimeout(() => {
+        card.classList.remove('loading');
+    }, 400 + index * 100);
+});
+
+// Section Navigation Dots (Option 3)
+const sectionNav = document.querySelector('.section-nav');
+const sectionDots = document.querySelectorAll('.section-dot');
+const sections = document.querySelectorAll('section[id]');
+
+const updateActiveDot = () => {
+    let activeSection = null;
+    let closestDistance = Infinity;
+
+    sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top);
+
+        // Find the section closest to the top of the viewport
+        if (distance < closestDistance) {
+            closestDistance = distance;
+            activeSection = section.id;
+        }
+    });
+
+    sectionDots.forEach(dot => {
+        dot.classList.remove('active');
+        if (dot.dataset.section === activeSection) {
+            dot.classList.add('active');
+        }
+    });
+
+    // Hide section nav when in hero section with smooth transition
+    if (window.scrollY < window.innerHeight) {
+        sectionNav.style.opacity = '0';
+        sectionNav.style.visibility = 'hidden';
+        sectionNav.style.pointerEvents = 'none';
+    } else {
+        sectionNav.style.opacity = '1';
+        sectionNav.style.visibility = 'visible';
+        sectionNav.style.pointerEvents = 'auto';
+    }
+};
+
+window.addEventListener('scroll', updateActiveDot);
+updateActiveDot();
+
+// Back to Top Button (Option 4)
+const backToTopBtn = document.querySelector('.back-to-top');
+
+const updateBackToTopVisibility = () => {
+    if (window.scrollY > window.innerHeight * 0.5) {
+        backToTopBtn.classList.add('visible');
+    } else {
+        backToTopBtn.classList.remove('visible');
+    }
+};
+
+window.addEventListener('scroll', updateBackToTopVisibility);
+
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+

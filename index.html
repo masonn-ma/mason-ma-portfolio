@@ -4,6 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Mason Ma - IT Undergraduate specializing in Enterprise Systems Development and Cyber Security. Portfolio featuring technical projects and photography.">
+    <meta name="author" content="Mason Ma">
+    <meta name="theme-color" content="#111827">
+    <meta property="og:title" content="Mason Ma | IT Portfolio">
+    <meta property="og:description" content="IT Undergraduate - Enterprise Systems Development & Cyber Security">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
     <title>Mason Ma | IT Portfolio</title>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
@@ -15,7 +23,7 @@
     <header>
         <canvas id="hero-network" aria-hidden="true"></canvas>
         <div class="header-inner">
-            <h1>Ma Thanh Long Mason</h1>
+            <h1>Mason Ma</h1>
             <p>IT Undergraduate - Enterprise Systems Development & Cyber Security</p>
             <div class="contact-links">
                 <a class="contact-link contact-email" href="mailto:masonma2005@gmail.com" aria-label="Email Mason Ma"
@@ -43,6 +51,16 @@
                             fill="currentColor" />
                     </svg>
                 </a>
+                <a class="contact-link contact-instagram" href="https://www.instagram.com/mason.captures/"
+                    target="_blank" rel="noopener noreferrer" aria-label="Photography Instagram Account"
+                    title="Photography Instagram Account">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor"
+                            stroke-width="1.8" />
+                        <circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8" />
+                        <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" />
+                    </svg>
+                </a>
             </div>
         </div>
         <a class="hero-scroll-cue" href="#about" aria-label="Scroll to content">
@@ -56,24 +74,41 @@
     <main class="content-layer">
         <div class="container">
             <section id="about">
-                <h2>About Me</h2>
-                <p><strong>Education:</strong> Bachelor of Information Technology, RMIT University Vietnam (2023 - 2027)
-                </p>
-                <p><strong>Current GPA:</strong> 3.2/4.0</p>
+                <h2>Education</h2>
+                <p><strong>Bachelor of Information Technology</strong></p>
+                <p> RMIT University Vietnam (2023 - 2027)</p>
+                <p>Current GPA: 3.2/4.0</p>
+                <p>English Proficiency: IELTS 7.5</p>
             </section>
 
             <section id="skills">
                 <h2>Technical Skills</h2>
                 <div class="grid">
                     <div class="card">
-                        <h3>Web & Backend</h3>
+                        <h3>Frontend</h3>
                         <ul class="skills-list">
-                            <li>JavaScript</li>
+                            <li>Flutter</li>
+                            <li>Tailwind</li>
+                            <li>HTML/CSS</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Backend</h3>
+                        <ul class="skills-list">
                             <li>Node.js</li>
                             <li>Express.js</li>
                             <li>REST APIs</li>
-                            <li>MongoDB</li>
+                            <li>CakePHP</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Databases</h3>
+                        <ul class="skills-list">
+                            <li>MySQL</li>
                             <li>PostgreSQL</li>
+                            <li>MongoDB</li>
+                            <li>Elasticsearch</li>
+                            <li>Neo4j</li>
                         </ul>
                     </div>
                     <div class="card">
@@ -88,12 +123,22 @@
                         </ul>
                     </div>
                     <div class="card">
-                        <h3>Tools & Languages</h3>
+                        <h3>Languages</h3>
                         <ul class="skills-list">
                             <li>Python</li>
                             <li>Java</li>
-                            <li>AWS Cloud</li>
+                            <li>JavaScript</li>
+                            <li>PHP</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Tools</h3>
+                        <ul class="skills-list">
                             <li>GitHub</li>
+                            <li>Visual Studio Code</li>
+                            <li>Docker Containers</li>
+                            <li>Android Studio</li>
+                            <li>AWS Cloud</li>
                             <li>Virtual Machines</li>
                         </ul>
                     </div>
@@ -154,17 +199,67 @@
             </section>
 
             <section id="photography">
-                <h2>Photography Hobby</h2>
+                <h2>My Hobby</h2>
+
+                <div class="camera-info">
+                    <div class="camera-card">
+                        <div class="camera-stat">
+                            <span class="stat-label">Camera</span>
+                            <span class="stat-value">Canon EOS 1500D</span>
+                        </div>
+                        <div class="camera-stat">
+                            <span class="stat-label">Lenses</span>
+                            <span class="stat-value">EF-S 18-55mm III<br>EF-S 17-85mm IS USM</span>
+                        </div>
+                        <div class="camera-stat">
+                            <span class="stat-label">Focus</span>
+                            <span class="stat-value">Urban & Landscape</span>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="gallery">
-                    <img src="imgs/IMG_3056.jpg" alt="Photo 1">
-                    <img src="imgs/IMG_3042.jpg" alt="Photo 2">
-                    <img src="imgs/IMG_2985-4.jpg" alt="Photo 3">
-                    <img src="imgs/IMG_2789-3.jpg" alt="Photo 4">
-                    <img src="imgs/IMG_2625-2.jpg" alt="Photo 5">
-                    <img src="imgs/IMG_1373.jpg" alt="Photo 6">
-                    <img src="imgs/IMG_2859-3.jpg" alt="Photo 7">
-                    <img src="imgs/IMG_3026.jpg" alt="Photo 8">
+                    <div class="gallery-item">
+                        <img class="gallery-img" data-src="imgs/IMG_3056.jpg" alt="Landmark 81 - HCMC"
+                            data-caption="Landmark 81 - HCMC">
+                        <div class="gallery-caption">Landmark 81 - HCMC</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img class="gallery-img" data-src="imgs/IMG_3042.jpg" alt="District 1 - HCMC"
+                            data-caption="District 1 - HCMC">
+                        data-caption="District 1 - HCMC">
+                        <div class="gallery-caption">District 1 - HCMC</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img class="gallery-img" data-src="imgs/IMG_2985-4.jpg" alt="China Town - HCMC"
+                            data-caption="China Town - HCMC">
+                        <div class="gallery-caption">China Town - HCMC</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img class="gallery-img" data-src="imgs/IMG_2789-3.jpg" alt="Cloud Forest - Singapore"
+                            data-caption="Cloud Forest - Singapore">
+                        <div class="gallery-caption">Cloud Forest - Singapore</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img class="gallery-img" data-src="imgs/IMG_2625-2.jpg" alt="Gardens by the Bay - Singapore"
+                            data-caption="Gardens by the Bay - Singapore">
+                        <div class="gallery-caption">Gardens by the Bay - Singapore</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img class="gallery-img" data-src="imgs/IMG_1373.jpg" alt="Caulfield Station - Melbourne"
+                            data-caption="Caulfield Station - Melbourne">
+                        <div class="gallery-caption">Caulfield Station - Melbourne</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img class="gallery-img" data-src="imgs/IMG_2859-3.jpg" alt="Bontanical Gardens - Singapore"
+                            data-caption="Bontanical Gardens - Singapore">
+                        <div class="gallery-caption">Bontanical Gardens - Singapore</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img class="gallery-img" data-src="imgs/IMG_3026.jpg" alt="Metropole Thủ Thiêm - HCMC"
+                            data-caption="Metropole Thủ Thiêm - HCMC">
+                        <div class="gallery-caption">Metropole Thủ Thiêm - HCMC</div>
+                    </div>
                 </div>
             </section>
         </div>
@@ -181,6 +276,26 @@
             <img id="lightbox-image" src="" alt="Full-size photo">
         </div>
     </div>
+
+    <!-- Section Navigation Dots (Option 3) -->
+    <nav class="section-nav">
+        <a href="#about" class="section-dot" data-section="about" data-label="Education"
+            aria-label="Go to Education section"></a>
+        <a href="#skills" class="section-dot" data-section="skills" data-label="Skills"
+            aria-label="Go to Technical Skills section"></a>
+        <a href="#projects" class="section-dot" data-section="projects" data-label="Projects"
+            aria-label="Go to Featured Projects section"></a>
+        <a href="#photography" class="section-dot" data-section="photography" data-label="Photography"
+            aria-label="Go to My Hobby section"></a>
+    </nav>
+
+    <!-- Back to Top Button (Option 4) -->
+    <button class="back-to-top" aria-label="Back to top" title="Back to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6 14.5 12 8.5 18 14.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </svg>
+    </button>
 
     <script src="js/main.js" defer></script>
 
