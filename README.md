@@ -1,10 +1,10 @@
-# Mason Ma Portfolio
+# Mason Ma's Portfolio
 
 > A clean, static portfolio site for showcasing IT skills, projects, and photography work.
 
 ![GitHub Pages Ready](https://img.shields.io/badge/GitHub%20Pages-ready-brightgreen)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-visit-green)](https://masonn-ma.github.io/mason-ma-portfolio/)
 ![Tech Stack](https://img.shields.io/badge/HTML%20%2B%20CSS%20%2B%20JS-static%20site-blue)
-![No Build Step](https://img.shields.io/badge/build-step-none-lightgrey)
 
 ## Snapshot
 
