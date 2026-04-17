@@ -1,18 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Nunito:wght@400;500;600;700;800&display=swap');
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 24px;
+}
+
 :root {
-    --bg-color: #f4f4f9;
-    --text-color: #333;
-    --primary-color: #0056b3;
-    --accent-color: #007bff;
+    --bg-color: #f8f9fb;
+    --text-color: #1a202c;
+    --primary-color: #2d3748;
+    --accent-color: #3182ce;
     --card-bg: #fff;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 10px 28px rgba(0, 0, 0, 0.15);
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
     background-color: var(--bg-color);
     color: var(--text-color);
-    line-height: 1.6;
+    line-height: 1.7;
+    font-size: 16px;
 }
 
 a {
@@ -21,18 +32,35 @@ a {
 
 section {
     margin-bottom: 3rem;
+    scroll-margin-top: 24px;
 }
 
 h2 {
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 10px;
+    font-family: 'Montserrat', 'Nunito', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
     color: var(--primary-color);
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(to right, var(--accent-color), rgba(49, 130, 206, 0.3));
+    border-radius: 2px;
 }
 
 footer {
     text-align: center;
-    padding: 20px;
-    background: #333;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, var(--primary-color), #1a202c);
     color: white;
-    margin-top: 40px;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
