@@ -6,6 +6,10 @@
 ![Tech Stack](https://img.shields.io/badge/HTML%20%2B%20CSS%20%2B%20JS-static%20site-blue)
 ![No Build Step](https://img.shields.io/badge/build-step-none-lightgrey)
 
+## Live Demo
+
+🔗 https://your-username.github.io/repo-name/
+
 ## Snapshot
 
 | Item | Details |
