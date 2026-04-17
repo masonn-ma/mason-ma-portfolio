@@ -4,17 +4,29 @@ if (heroNetworkCanvas) {
     const heroSection = heroNetworkCanvas.closest('header');
     const ctx = heroNetworkCanvas.getContext('2d');
     const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const lowPowerMode = motionPreference
+        || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4)
+        || (navigator.deviceMemory && navigator.deviceMemory <= 4)
+        || (navigator.connection && navigator.connection.saveData);
     let particles = [];
     let canvasWidth = 0;
     let canvasHeight = 0;
     let animationFrameId = null;
     let scrollFrameId = null;
+    let lastFrameTime = 0;
+
+    const particleCountConfig = lowPowerMode
+        ? { min: 22, max: 56, divisor: 25000 }
+        : { min: 36, max: 84, divisor: 18500 };
+    const connectionDistance = lowPowerMode ? 108 : 142;
+    const targetFps = lowPowerMode ? 25 : 32;
+    const frameDuration = 1000 / targetFps;
 
     const createParticle = () => ({
         x: Math.random() * canvasWidth,
         y: Math.random() * canvasHeight,
-        vx: (Math.random() - 0.5) * 0.32,
-        vy: (Math.random() - 0.5) * 0.32,
+        vx: (Math.random() - 0.5) * (lowPowerMode ? 0.2 : 0.28),
+        vy: (Math.random() - 0.5) * (lowPowerMode ? 0.2 : 0.28),
         radius: Math.random() * 1.8 + 1.1
     });
 
@@ -26,11 +38,23 @@ if (heroNetworkCanvas) {
         heroNetworkCanvas.height = Math.floor(canvasHeight * dpr);
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-        const particleCount = Math.max(36, Math.min(90, Math.floor((canvasWidth * canvasHeight) / 17000)));
+        const particleCount = Math.max(
+            particleCountConfig.min,
+            Math.min(
+                particleCountConfig.max,
+                Math.floor((canvasWidth * canvasHeight) / particleCountConfig.divisor)
+            )
+        );
         particles = Array.from({ length: particleCount }, createParticle);
     };
 
-    const drawScene = () => {
+    const drawScene = (timestamp = 0) => {
+        if (!motionPreference && (timestamp - lastFrameTime) < frameDuration) {
+            animationFrameId = window.requestAnimationFrame(drawScene);
+            return;
+        }
+
+        lastFrameTime = timestamp;
         ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 
         for (let i = 0; i < particles.length; i += 1) {
@@ -55,7 +79,7 @@ if (heroNetworkCanvas) {
                 const dx = particles[i].x - particles[j].x;
                 const dy = particles[i].y - particles[j].y;
                 const distance = Math.sqrt((dx * dx) + (dy * dy));
-                const maxDistance = 150;
+                const maxDistance = connectionDistance;
 
                 if (distance < maxDistance) {
                     const opacity = (1 - (distance / maxDistance)) * 0.26;
