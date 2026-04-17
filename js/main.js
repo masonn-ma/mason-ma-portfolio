@@ -116,36 +116,47 @@ const galleryImgs = document.querySelectorAll('.gallery-img');
 const lightbox = document.getElementById('lightbox');
 const lightboxImage = document.getElementById('lightbox-image');
 
+const loadGalleryImage = (img) => {
+    const src = img.dataset.src;
+
+    if (!src || img.classList.contains('loaded')) {
+        return;
+    }
+
+    img.classList.add('loading');
+
+    const tempImg = new Image();
+    tempImg.onload = () => {
+        img.src = src;
+        img.classList.remove('loading');
+        img.classList.add('loaded');
+    };
+    tempImg.onerror = () => {
+        img.classList.remove('loading');
+    };
+    tempImg.src = src;
+};
+
 // Lazy loading with Intersection Observer
-const imageObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const img = entry.target;
-            const src = img.dataset.src;
-
-            img.classList.add('loading');
-
-            const tempImg = new Image();
-            tempImg.onload = () => {
-                img.src = src;
-                img.classList.remove('loading');
-                img.classList.add('loaded');
+if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                loadGalleryImage(img);
                 observer.unobserve(img);
-            };
-            tempImg.onerror = () => {
-                img.classList.remove('loading');
-                observer.unobserve(img);
-            };
-            tempImg.src = src;
-        }
+            }
+        });
+    }, {
+        rootMargin: '50px'
     });
-}, {
-    rootMargin: '50px'
-});
 
-galleryImgs.forEach(img => {
-    imageObserver.observe(img);
-});
+    galleryImgs.forEach(img => {
+        imageObserver.observe(img);
+    });
+} else {
+    galleryImgs.forEach((img) => loadGalleryImage(img));
+}
 
 // Lightbox functionality
 galleryItems.forEach(item => {

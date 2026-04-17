@@ -7,6 +7,11 @@ html {
     scrollbar-width: thin;
 }
 
+html,
+body {
+    min-height: 100%;
+}
+
 :root {
     --bg-color: #111827;
     --text-color: rgba(255, 255, 255, 0.88);
@@ -63,7 +68,14 @@ footer {
     padding: 2.5rem;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     color: rgba(255, 255, 255, 0.84);
     margin-top: 4rem;
     border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+    footer {
+        background: rgba(17, 24, 39, 0.86);
+    }
 }
