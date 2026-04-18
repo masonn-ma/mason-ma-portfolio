@@ -31,6 +31,9 @@ body {
     color: var(--text-color);
     line-height: 1.7;
     font-size: 16px;
+    overflow-x: hidden;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 
 a {
@@ -77,5 +80,22 @@ footer {
 @supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
     footer {
         background: rgba(17, 24, 39, 0.86);
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        margin-bottom: 2.35rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+        margin-bottom: 1.35rem;
+        padding-bottom: 0.55rem;
+    }
+
+    footer {
+        margin-top: 2.8rem;
+        padding: 2rem 1rem;
     }
 }

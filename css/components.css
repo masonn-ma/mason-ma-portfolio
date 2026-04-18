@@ -297,3 +297,66 @@
     outline: 2px solid white;
     outline-offset: 3px;
 }
+
+@media (max-width: 768px) {
+    .card {
+        padding: 1.35rem;
+        border-radius: 10px;
+    }
+
+    .card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.65rem;
+    }
+
+    .skills-list {
+        gap: 0.55rem;
+    }
+
+    .skills-list li {
+        font-size: 0.84rem;
+        padding: 0.44rem 0.72rem;
+    }
+
+    .project-details {
+        margin-top: 0.85rem;
+        padding-left: 1rem;
+    }
+
+    .project-details li {
+        font-size: 0.9rem;
+    }
+
+    .travel-modal-content {
+        width: min(420px, calc(100vw - 1rem));
+        max-height: min(78vh, 620px);
+        overflow-y: auto;
+        padding: 1.35rem 1.1rem 1.2rem;
+        border-radius: 14px;
+    }
+
+    .travel-modal-content h2 {
+        font-size: 1.3rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .travel-item {
+        font-size: 0.9rem;
+    }
+
+    .travel-modal-close {
+        top: 0.7rem;
+        right: 0.7rem;
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media (hover: none) {
+
+    .skills-list li:hover,
+    .card:hover {
+        transform: none;
+        box-shadow: var(--shadow-sm);
+    }
+}
