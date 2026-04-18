@@ -298,6 +298,62 @@
     outline-offset: 3px;
 }
 
+/* Timeline */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+    height: auto;
+    gap: 1.5rem;
+    /* background: blue; */
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.timeline-item-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.timeline-item-logo {
+    display: flex;
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: rgba(255, 255, 255, 0.86);
+    z-index: 99;
+    padding: 0;
+    margin: 0;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+    animation: none;
+}
+
+.timeline-item-logo>img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin: 0;
+}
+
+.timeline-content {
+    display: inline-flex;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     .card {
         padding: 1.35rem;
