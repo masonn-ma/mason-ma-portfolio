@@ -1,138 +1,146 @@
 const heroNetworkCanvas = document.getElementById('hero-network');
 
 if (heroNetworkCanvas) {
-    const heroSection = heroNetworkCanvas.closest('header');
-    const ctx = heroNetworkCanvas.getContext('2d');
-    const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const lowPowerMode = motionPreference
-        || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4)
-        || (navigator.deviceMemory && navigator.deviceMemory <= 4)
-        || (navigator.connection && navigator.connection.saveData);
-    let particles = [];
-    let canvasWidth = 0;
-    let canvasHeight = 0;
-    let animationFrameId = null;
-    let scrollFrameId = null;
-    let lastFrameTime = 0;
+    try {
+        const heroSection = heroNetworkCanvas.closest('header');
+        const ctx = heroNetworkCanvas.getContext('2d');
+        const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const lowPowerMode = motionPreference
+            || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4)
+            || (navigator.deviceMemory && navigator.deviceMemory <= 4)
+            || (navigator.connection && navigator.connection.saveData);
+        let particles = [];
+        let canvasWidth = 0;
+        let canvasHeight = 0;
+        let animationFrameId = null;
+        let scrollFrameId = null;
+        let lastFrameTime = 0;
 
-    const particleCountConfig = lowPowerMode
-        ? { min: 22, max: 56, divisor: 25000 }
-        : { min: 36, max: 84, divisor: 18500 };
-    const connectionDistance = lowPowerMode ? 108 : 142;
-    const targetFps = lowPowerMode ? 25 : 32;
-    const frameDuration = 1000 / targetFps;
-
-    const createParticle = () => ({
-        x: Math.random() * canvasWidth,
-        y: Math.random() * canvasHeight,
-        vx: (Math.random() - 0.5) * (lowPowerMode ? 0.2 : 0.28),
-        vy: (Math.random() - 0.5) * (lowPowerMode ? 0.2 : 0.28),
-        radius: Math.random() * 1.8 + 1.1
-    });
-
-    const setCanvasSize = () => {
-        const dpr = window.devicePixelRatio || 1;
-        canvasWidth = heroNetworkCanvas.offsetWidth;
-        canvasHeight = heroNetworkCanvas.offsetHeight;
-        heroNetworkCanvas.width = Math.floor(canvasWidth * dpr);
-        heroNetworkCanvas.height = Math.floor(canvasHeight * dpr);
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-        const particleCount = Math.max(
-            particleCountConfig.min,
-            Math.min(
-                particleCountConfig.max,
-                Math.floor((canvasWidth * canvasHeight) / particleCountConfig.divisor)
-            )
-        );
-        particles = Array.from({ length: particleCount }, createParticle);
-    };
-
-    const drawScene = (timestamp = 0) => {
-        if (!motionPreference && (timestamp - lastFrameTime) < frameDuration) {
-            animationFrameId = window.requestAnimationFrame(drawScene);
-            return;
+        if (!ctx) {
+            throw new Error('Canvas 2D context is unavailable.');
         }
 
-        lastFrameTime = timestamp;
-        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+        const particleCountConfig = lowPowerMode
+            ? { min: 22, max: 56, divisor: 25000 }
+            : { min: 36, max: 84, divisor: 18500 };
+        const connectionDistance = lowPowerMode ? 108 : 142;
+        const targetFps = lowPowerMode ? 25 : 32;
+        const frameDuration = 1000 / targetFps;
 
-        for (let i = 0; i < particles.length; i += 1) {
-            const p = particles[i];
+        const createParticle = () => ({
+            x: Math.random() * canvasWidth,
+            y: Math.random() * canvasHeight,
+            vx: (Math.random() - 0.5) * (lowPowerMode ? 0.2 : 0.28),
+            vy: (Math.random() - 0.5) * (lowPowerMode ? 0.2 : 0.28),
+            radius: Math.random() * 1.8 + 1.1
+        });
 
-            if (!motionPreference) {
-                p.x += p.vx;
-                p.y += p.vy;
+        const setCanvasSize = () => {
+            const dpr = window.devicePixelRatio || 1;
+            canvasWidth = heroNetworkCanvas.offsetWidth;
+            canvasHeight = heroNetworkCanvas.offsetHeight;
+            heroNetworkCanvas.width = Math.floor(canvasWidth * dpr);
+            heroNetworkCanvas.height = Math.floor(canvasHeight * dpr);
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-                if (p.x < 0 || p.x > canvasWidth) p.vx *= -1;
-                if (p.y < 0 || p.y > canvasHeight) p.vy *= -1;
+            const particleCount = Math.max(
+                particleCountConfig.min,
+                Math.min(
+                    particleCountConfig.max,
+                    Math.floor((canvasWidth * canvasHeight) / particleCountConfig.divisor)
+                )
+            );
+            particles = Array.from({ length: particleCount }, createParticle);
+        };
+
+        const drawScene = (timestamp = 0) => {
+            if (!motionPreference && (timestamp - lastFrameTime) < frameDuration) {
+                animationFrameId = window.requestAnimationFrame(drawScene);
+                return;
             }
 
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(255, 255, 255, 0.78)';
-            ctx.fill();
-        }
+            lastFrameTime = timestamp;
+            ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 
-        for (let i = 0; i < particles.length; i += 1) {
-            for (let j = i + 1; j < particles.length; j += 1) {
-                const dx = particles[i].x - particles[j].x;
-                const dy = particles[i].y - particles[j].y;
-                const distance = Math.sqrt((dx * dx) + (dy * dy));
-                const maxDistance = connectionDistance;
+            for (let i = 0; i < particles.length; i += 1) {
+                const p = particles[i];
 
-                if (distance < maxDistance) {
-                    const opacity = (1 - (distance / maxDistance)) * 0.26;
-                    ctx.beginPath();
-                    ctx.moveTo(particles[i].x, particles[i].y);
-                    ctx.lineTo(particles[j].x, particles[j].y);
-                    ctx.strokeStyle = `rgba(255, 255, 255, ${opacity.toFixed(3)})`;
-                    ctx.lineWidth = 1;
-                    ctx.stroke();
+                if (!motionPreference) {
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    if (p.x < 0 || p.x > canvasWidth) p.vx *= -1;
+                    if (p.y < 0 || p.y > canvasHeight) p.vy *= -1;
+                }
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.78)';
+                ctx.fill();
+            }
+
+            for (let i = 0; i < particles.length; i += 1) {
+                for (let j = i + 1; j < particles.length; j += 1) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt((dx * dx) + (dy * dy));
+                    const maxDistance = connectionDistance;
+
+                    if (distance < maxDistance) {
+                        const opacity = (1 - (distance / maxDistance)) * 0.26;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(255, 255, 255, ${opacity.toFixed(3)})`;
+                        ctx.lineWidth = 1;
+                        ctx.stroke();
+                    }
                 }
             }
-        }
 
-        if (!motionPreference) {
-            animationFrameId = window.requestAnimationFrame(drawScene);
-        }
-    };
+            if (!motionPreference) {
+                animationFrameId = window.requestAnimationFrame(drawScene);
+            }
+        };
 
-    setCanvasSize();
-    drawScene();
-
-    if (motionPreference) {
-        drawScene();
-    }
-
-    window.addEventListener('resize', () => {
-        if (animationFrameId) {
-            window.cancelAnimationFrame(animationFrameId);
-        }
         setCanvasSize();
         drawScene();
-    });
 
-    const updateHeroVisibility = () => {
-        const hideThreshold = window.innerHeight * 0.18;
-        const shouldHideHeroContent = window.scrollY > hideThreshold;
-
-        if (heroSection) {
-            heroSection.classList.toggle('hero-content-hidden', shouldHideHeroContent);
+        if (motionPreference) {
+            drawScene();
         }
 
-        scrollFrameId = null;
-    };
+        window.addEventListener('resize', () => {
+            if (animationFrameId) {
+                window.cancelAnimationFrame(animationFrameId);
+            }
+            setCanvasSize();
+            drawScene();
+        });
 
-    window.addEventListener('scroll', () => {
-        if (scrollFrameId) {
-            return;
-        }
+        const updateHeroVisibility = () => {
+            const hideThreshold = window.innerHeight * 0.18;
+            const shouldHideHeroContent = window.scrollY > hideThreshold;
 
-        scrollFrameId = window.requestAnimationFrame(updateHeroVisibility);
-    }, { passive: true });
+            if (heroSection) {
+                heroSection.classList.toggle('hero-content-hidden', shouldHideHeroContent);
+            }
 
-    updateHeroVisibility();
+            scrollFrameId = null;
+        };
+
+        window.addEventListener('scroll', () => {
+            if (scrollFrameId) {
+                return;
+            }
+
+            scrollFrameId = window.requestAnimationFrame(updateHeroVisibility);
+        }, { passive: true });
+
+        updateHeroVisibility();
+    } catch (error) {
+        console.warn('Hero canvas disabled:', error);
+    }
 }
 
 const galleryItems = document.querySelectorAll('.gallery-item');
@@ -293,6 +301,10 @@ const sectionDots = document.querySelectorAll('.section-dot');
 const sections = document.querySelectorAll('section[id]');
 
 const updateActiveDot = () => {
+    if (!sectionNav || !sectionDots.length || !sections.length) {
+        return;
+    }
+
     if (window.matchMedia('(max-width: 900px)').matches) {
         sectionNav.style.opacity = '0';
         sectionNav.style.visibility = 'hidden';
@@ -341,6 +353,10 @@ updateActiveDot();
 const backToTopBtn = document.querySelector('.back-to-top');
 
 const updateBackToTopVisibility = () => {
+    if (!backToTopBtn) {
+        return;
+    }
+
     if (window.scrollY > window.innerHeight * 0.5) {
         backToTopBtn.classList.add('visible');
     } else {
@@ -350,10 +366,12 @@ const updateBackToTopVisibility = () => {
 
 window.addEventListener('scroll', updateBackToTopVisibility);
 
-backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
-});
+}
 
