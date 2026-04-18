@@ -1,5 +1,4 @@
 header {
-    position: relative;
     overflow: hidden;
     background: #14161b;
     color: white;
@@ -160,6 +159,40 @@ header p {
 .container,
 footer {
     font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.hero-travel-link {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 3;
+    color: rgba(255, 255, 255, 0.92);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    padding: 0;
+    border: 0;
+    background: none;
+    text-shadow: 0 0 0 rgba(255, 255, 255, 0);
+    transition: color 0.25s ease, text-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.hero-travel-link:hover {
+    transform: translateY(-1px);
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 22px rgba(255, 255, 255, 0.4);
+}
+
+.hero-travel-link:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
+header.hero-content-hidden .hero-travel-link {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .hero-scroll-cue {
@@ -324,16 +357,6 @@ section strong {
     animation: skeletonShimmer 1.5s infinite;
 }
 
-@keyframes skeletonShimmer {
-    0% {
-        background-position: 200% 0;
-    }
-
-    100% {
-        background-position: -200% 0;
-    }
-}
-
 .gallery-caption {
     position: absolute;
     bottom: 0;
@@ -438,6 +461,7 @@ section strong {
     box-sizing: border-box;
 }
 
+
 #lightbox-image {
     max-width: calc(90vw - 32px);
     max-height: calc(90vh - 32px);
@@ -447,6 +471,91 @@ section strong {
     border-radius: 8px;
     box-shadow: var(--shadow-lg);
     object-fit: contain;
+}
+
+/* Travel Wishlist Popup */
+.travel-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.travel-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.travel-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(7, 10, 18, 0.82);
+}
+
+.travel-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(92vw, 760px);
+    max-height: 86vh;
+    overflow: auto;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(17, 24, 39, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.4);
+    padding: 1.25rem 1.2rem 1.1rem;
+}
+
+.travel-modal-content h2 {
+    margin: 0 0 1rem;
+}
+
+.travel-modal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.travel-list-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 0.95rem 1rem;
+}
+
+.travel-list-card h3 {
+    margin: 0 0 0.5rem;
+    color: rgba(255, 255, 255, 0.94);
+}
+
+.travel-list-card ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.travel-list-card li {
+    margin-bottom: 0.35rem;
+}
+
+.travel-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.92);
+    border-radius: 999px;
+    padding: 0.32rem 0.72rem;
+    cursor: pointer;
+}
+
+.travel-modal-close:hover {
+    background: rgba(255, 255, 255, 0.16);
 }
 
 @media (max-width: 600px) {
@@ -470,6 +579,13 @@ section strong {
         height: 48px;
     }
 
+    .hero-travel-link {
+        top: 12px;
+        right: 12px;
+        font-size: 0.78rem;
+        padding: 0;
+    }
+
     .hero-scroll-cue svg {
         width: 20px;
         height: 20px;
@@ -484,6 +600,10 @@ section strong {
     #lightbox-image {
         max-width: calc(92vw - 24px);
         max-height: calc(86vh - 24px);
+    }
+
+    .travel-modal-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -635,6 +755,12 @@ section strong {
 }
 
 /* Hide navigation on small screens */
+@media (max-width: 900px) {
+    .section-nav {
+        display: none;
+    }
+}
+
 @media (max-width: 768px) {
 
     .gallery-item,
@@ -644,10 +770,6 @@ section strong {
     .gallery-item:nth-child(4n) {
         grid-column: span 1;
         grid-row: span 1;
-    }
-
-    .section-nav {
-        display: none;
     }
 
     .back-to-top {

@@ -139,6 +139,19 @@ const galleryItems = document.querySelectorAll('.gallery-item');
 const galleryImgs = document.querySelectorAll('.gallery-img');
 const lightbox = document.getElementById('lightbox');
 const lightboxImage = document.getElementById('lightbox-image');
+const travelLink = document.querySelector('.hero-travel-link');
+const travelModal = document.getElementById('travel-modal');
+const travelModalClose = document.getElementById('travel-modal-close');
+const heroSectionElement = document.querySelector('header');
+
+const syncHeroVisibilityWithScroll = () => {
+    if (!heroSectionElement) {
+        return;
+    }
+
+    const hideThreshold = window.innerHeight * 0.18;
+    heroSectionElement.classList.toggle('hero-content-hidden', window.scrollY > hideThreshold);
+};
 
 const loadGalleryImage = (img) => {
     const src = img.dataset.src;
@@ -197,7 +210,35 @@ galleryItems.forEach(item => {
 
 const closeLightbox = () => {
     lightbox.classList.remove('active');
-    document.body.style.overflow = '';
+    if (!travelModal || !travelModal.classList.contains('active')) {
+        document.body.style.overflow = '';
+    }
+};
+
+const openTravelModal = () => {
+    if (!travelModal) {
+        return;
+    }
+
+    travelModal.classList.add('active');
+    travelModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    if (heroSectionElement) {
+        heroSectionElement.classList.add('hero-content-hidden');
+    }
+};
+
+const closeTravelModal = () => {
+    if (!travelModal) {
+        return;
+    }
+
+    travelModal.classList.remove('active');
+    travelModal.setAttribute('aria-hidden', 'true');
+    if (!lightbox.classList.contains('active')) {
+        document.body.style.overflow = '';
+    }
+    syncHeroVisibilityWithScroll();
 };
 
 lightbox.addEventListener('click', (e) => {
@@ -209,8 +250,32 @@ lightbox.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && lightbox.classList.contains('active')) {
         closeLightbox();
+        return;
+    }
+
+    if (e.key === 'Escape' && travelModal && travelModal.classList.contains('active')) {
+        closeTravelModal();
     }
 });
+
+if (travelLink) {
+    travelLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        openTravelModal();
+    });
+}
+
+if (travelModal) {
+    travelModal.addEventListener('click', (e) => {
+        if (e.target === travelModal || e.target.classList.contains('travel-modal-overlay')) {
+            closeTravelModal();
+        }
+    });
+}
+
+if (travelModalClose) {
+    travelModalClose.addEventListener('click', closeTravelModal);
+}
 
 // Card skeleton loader
 const cards = document.querySelectorAll('.card');
@@ -228,6 +293,13 @@ const sectionDots = document.querySelectorAll('.section-dot');
 const sections = document.querySelectorAll('section[id]');
 
 const updateActiveDot = () => {
+    if (window.matchMedia('(max-width: 900px)').matches) {
+        sectionNav.style.opacity = '0';
+        sectionNav.style.visibility = 'hidden';
+        sectionNav.style.pointerEvents = 'none';
+        return;
+    }
+
     let activeSection = null;
     let closestDistance = Infinity;
 
@@ -249,8 +321,9 @@ const updateActiveDot = () => {
         }
     });
 
-    // Hide section nav when in hero section with smooth transition
-    if (window.scrollY < window.innerHeight) {
+    // Show dots before hero is fully gone for smoother wayfinding.
+    const navRevealThreshold = window.innerHeight * 0.72;
+    if (window.scrollY < navRevealThreshold) {
         sectionNav.style.opacity = '0';
         sectionNav.style.visibility = 'hidden';
         sectionNav.style.pointerEvents = 'none';
