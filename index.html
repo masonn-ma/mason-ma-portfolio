@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <!-- Meta tags for SEO and responsiveness -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
@@ -15,8 +16,22 @@
     <meta property="og:image" content="https://masonn-ma.github.io/mason-ma-portfolio/imgs/quickview.png">
     <meta property="og:image:alt" content="Mason Ma portfolio hero preview">
     <link rel="canonical" href="https://masonn-ma.github.io/mason-ma-portfolio/">
+
+    <!-- Title of the webpage -->
     <title>Mason Ma's Portfolio</title>
-    <link rel="icon" type="image/png" href="imgs/logo/favicon.png">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="imgs/favicons/favicon-48x48.png">
+    <link rel="icon" href="imgs/favicons/favicon.ico">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="imgs/favicons/apple-touch-icon.png">
+
+    <link rel="icon" type="image/png" sizes="192x192" href="imgs/favicons/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="imgs/favicons/favicon-512x512.png">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
@@ -25,6 +40,7 @@
 <body>
 
     <header>
+        <!-- Hero Section with Canvas Background -->
         <canvas id="hero-network" aria-hidden="true"></canvas>
         <a class="hero-travel-link" href="#" aria-label="Open travel list popup">Travel List</a>
         <div class="header-inner">
@@ -68,6 +84,7 @@
                 </a>
             </div>
         </div>
+        <!-- Scroll Cue -->
         <a class="hero-scroll-cue" href="#about" aria-label="Scroll to content">
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path d="M6 9.5 12 15.5 18 9.5" fill="none" stroke="currentColor" stroke-width="2.4"
@@ -77,6 +94,7 @@
     </header>
 
     <main class="content-layer">
+        <!-- Main content container -->
         <div class="container">
             <section id="about">
                 <h2>about me.</h2>
@@ -85,7 +103,7 @@
                     in Cyber Assurance and Enterprise Systems Development.</p>
             </section>
 
-            <section id="education">
+            <section id="education"> <!-- Education section with timeline layout -->
                 <h2>education.</h2>
                 <div class="timeline">
                     <div class="timeline-item">
@@ -101,7 +119,7 @@
                 </div>
             </section>
 
-            <section id="skills">
+            <section id="skills"> <!-- Skills section with grid layout -->
                 <h2>skills.</h2>
                 <div class="grid">
                     <div class="card">
@@ -165,7 +183,7 @@
                 </div>
             </section>
 
-            <section id="projects">
+            <section id="projects"> <!-- Projects section with detailed cards -->
                 <h2>projects.</h2>
                 <div class="grid">
                     <div class="card">
@@ -218,7 +236,7 @@
                 </div>
             </section>
 
-            <section id="photography">
+            <section id="photography"> <!-- Photography section with gallery layout -->
                 <h2>photography.</h2>
 
                 <div class="camera-info">
@@ -340,8 +358,7 @@
         </svg>
     </button>
 
-    <script src="js/main.js" defer></script>
-
+    <script src="js/main.js" defer></script> <!-- Main JavaScript file for interactivity and animations -->
 </body>
 
 </html>
