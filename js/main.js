@@ -346,7 +346,7 @@ const updateActiveDot = () => {
     }
 };
 
-window.addEventListener('scroll', updateActiveDot);
+window.addEventListener('scroll', updateActiveDot, { passive: true });
 updateActiveDot();
 
 // Back to Top Button (Option 4)
@@ -364,7 +364,7 @@ const updateBackToTopVisibility = () => {
     }
 };
 
-window.addEventListener('scroll', updateBackToTopVisibility);
+window.addEventListener('scroll', updateBackToTopVisibility, { passive: true });
 
 if (backToTopBtn) {
     backToTopBtn.addEventListener('click', () => {

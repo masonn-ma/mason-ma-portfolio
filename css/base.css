@@ -5,6 +5,7 @@ html {
     scroll-padding-top: 24px;
     scrollbar-color: rgba(96, 165, 250, 0.5) transparent;
     scrollbar-width: thin;
+    overscroll-behavior: none;
 }
 
 html,
@@ -34,6 +35,19 @@ body {
     overflow-x: hidden;
     text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #14161b;
+    z-index: -1;
+    pointer-events: none;
 }
 
 a {
