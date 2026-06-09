@@ -42,10 +42,16 @@
     <header>
         <!-- Hero Section with Canvas Background -->
         <canvas id="hero-network" aria-hidden="true"></canvas>
-        <a class="hero-travel-link" href="#" aria-label="Open travel list popup">Travel List</a>
+        <nav class="nav-list" aria-label="Primary navigation">
+            <a class="hero-travel-link" href="#about" aria-label="Open travel list popup">About Me</a>
+            <a class="hero-travel-link" href="#education" aria-label="Open travel list popup">Education</a>
+            <a class="hero-travel-link" href="#projects" aria-label="Open travel list popup">Projects</a>
+            <a class="hero-travel-link" href="#" aria-label="Open travel list popup">Travel Wishlist</a>
+        </nav>
         <div class="header-inner">
             <h1>Mason Ma</h1>
-            <p>IT Undergraduate - DevOps & Cyber Security</p>
+            <p style="margin-top: 0;">IT Undergraduate <br></p>
+            <p style="margin-top: 0;">Cybersecurity | Digital Forensics | OSINT | Backend Development</p>
             <div class="contact-links">
                 <a class="contact-link contact-email" href="mailto:masonma2005@gmail.com" aria-label="Email Mason Ma"
                     title="masonma2005@gmail.com">
@@ -97,12 +103,18 @@
         <!-- Main content container -->
         <div class="container">
             <section id="about">
-                
+
                 <div class="about-grid">
                     <article class="profile-card profile-card--about profile-card--about-left">
                         <h2>about me.</h2>
-                        <p class="profile-card-copy profile-card-copy--lead">Third-year IT undergraduate at RMIT Vietnam, specializing in Cyber
-                            Security. Pursuing double minors in Cyber Assurance and Enterprise Systems Development.</p>
+                        <p class="profile-card-copy profile-card-copy--lead">Third-year Information Technology
+                            undergraduate at RMIT University Vietnam, focusing on cybersecurity, digital
+                            forensics, OSINT, and backend development. I enjoy working on projects that combine
+                            practical software development with
+                            security concepts, including API development, network design, route planning systems, and
+                            forensic investigation
+                            practice.
+                        </p>
                     </article>
 
                     <div class="dice-stage" aria-hidden="true">
@@ -124,7 +136,7 @@
                                     <p>
                                         <span style="color: var(--accent-color);">2023 - Present</span><br>
                                         <strong>BACHELOR OF INFORMATION TECHNOLOGY</strong><br>
-                                        Minors: Enterprise Systems Developement & Cyber Security
+                                        Minors: Enterprise Systems Development & Cyber Security
                                     </p>
                                 </div>
                             </div>
@@ -135,29 +147,83 @@
                         <article class="profile-card profile-card--skills skills-card skills-card--cyber">
                             <p class="card-kicker">cybersecurity stack</p>
                             <div class="skill-icon-grid skill-icon-grid--card" aria-label="Cybersecurity skills">
-                                <button class="skill-icon skill-icon--cyan" type="button" title="Wireshark" aria-label="Wireshark">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3m0 12v3M3 12h3m12 0h3M6.8 6.8l2.1 2.1m6.2 6.2 2.1 2.1m0-10.4-2.1 2.1M8.9 15.1l-2.1 2.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+                                <button class="skill-icon skill-icon--cyan" type="button" title="Wireshark"
+                                    aria-label="Wireshark">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path
+                                            d="M12 3v3m0 12v3M3 12h3m12 0h3M6.8 6.8l2.1 2.1m6.2 6.2 2.1 2.1m0-10.4-2.1 2.1M8.9 15.1l-2.1 2.1"
+                                            fill="none" stroke="currentColor" stroke-width="1.8"
+                                            stroke-linecap="round" />
+                                        <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor"
+                                            stroke-width="1.8" />
+                                    </svg>
                                 </button>
-                                <button class="skill-icon skill-icon--orange" type="button" title="Burp Suite" aria-label="Burp Suite">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 6h10v2l-1 6H8L7 8V6zm1 8h8l-.7 4H8.7L8 14zm2-10h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M9 2.5 8 6h8l-1-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                                <button class="skill-icon skill-icon--orange" type="button" title="Burp Suite"
+                                    aria-label="Burp Suite">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M7 6h10v2l-1 6H8L7 8V6zm1 8h8l-.7 4H8.7L8 14zm2-10h4" fill="none"
+                                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                                        <path d="M9 2.5 8 6h8l-1-3.5" fill="none" stroke="currentColor"
+                                            stroke-width="1.8" stroke-linejoin="round" />
+                                    </svg>
                                 </button>
-                                <button class="skill-icon skill-icon--blue" type="button" title="Virtual Machines" aria-label="Virtual Machines">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="6" width="14" height="9" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 19h6M11 15v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                                <button class="skill-icon skill-icon--blue" type="button" title="Virtual Machines"
+                                    aria-label="Virtual Machines">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <rect x="5" y="6" width="14" height="9" rx="1.5" fill="none"
+                                            stroke="currentColor" stroke-width="1.8" />
+                                        <path d="M9 19h6M11 15v4" fill="none" stroke="currentColor" stroke-width="1.8"
+                                            stroke-linecap="round" />
+                                    </svg>
                                 </button>
-                                <button class="skill-icon skill-icon--sky" type="button" title="Kali Linux" aria-label="Kali Linux">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2 19 7v10.8l-7 3.9-7-3.9V7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.1 7.8h1.9v4l3.9-4h2.2l-4 4.2 4.1 4.2H14l-4-4v4H8.1z" fill="currentColor"/></svg>
+                                <button class="skill-icon skill-icon--sky" type="button" title="Kali Linux"
+                                    aria-label="Kali Linux">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M12 3.2 19 7v10.8l-7 3.9-7-3.9V7z" fill="none" stroke="currentColor"
+                                            stroke-width="1.6" stroke-linejoin="round" />
+                                        <path d="M8.1 7.8h1.9v4l3.9-4h2.2l-4 4.2 4.1 4.2H14l-4-4v4H8.1z"
+                                            fill="currentColor" />
+                                    </svg>
                                 </button>
-                                <button class="skill-icon skill-icon--green" type="button" title="Nmap" aria-label="Nmap">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2" fill="currentColor"/><path d="m12 5 1.2 3.6H17l-3 2.2 1.2 3.6-3.2-2.3-3.2 2.3L10 10.8 7 8.6h3.8z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" opacity="0.8"/></svg>
+                                <button class="skill-icon skill-icon--green" type="button" title="Nmap"
+                                    aria-label="Nmap">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <circle cx="12" cy="12" r="7" fill="none" stroke="currentColor"
+                                            stroke-width="1.8" />
+                                        <circle cx="12" cy="12" r="2" fill="currentColor" />
+                                        <path d="m12 5 1.2 3.6H17l-3 2.2 1.2 3.6-3.2-2.3-3.2 2.3L10 10.8 7 8.6h3.8z"
+                                            fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"
+                                            opacity="0.8" />
+                                    </svg>
                                 </button>
-                                <button class="skill-icon skill-icon--slate" type="button" title="Autopsy" aria-label="Autopsy">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16v10H4z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8V5h8v3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7 12h10M7 15h7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                                <button class="skill-icon skill-icon--slate" type="button" title="Autopsy"
+                                    aria-label="Autopsy">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M4 8h16v10H4z" fill="none" stroke="currentColor" stroke-width="1.8" />
+                                        <path d="M8 8V5h8v3" fill="none" stroke="currentColor" stroke-width="1.8" />
+                                        <path d="M7 12h10M7 15h7" fill="none" stroke="currentColor" stroke-width="1.8"
+                                            stroke-linecap="round" />
+                                    </svg>
                                 </button>
-                                <button class="skill-icon skill-icon--red" type="button" title="Cisco Packet Tracer" aria-label="Cisco Packet Tracer">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15V9l7-4 7 4v6l-7 4-7-4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 5v14M5 9l7 4 7-4" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                                <button class="skill-icon skill-icon--red" type="button" title="Cisco Packet Tracer"
+                                    aria-label="Cisco Packet Tracer">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M5 15V9l7-4 7 4v6l-7 4-7-4z" fill="none" stroke="currentColor"
+                                            stroke-width="1.8" stroke-linejoin="round" />
+                                        <path d="M12 5v14M5 9l7 4 7-4" fill="none" stroke="currentColor"
+                                            stroke-width="1.2" stroke-linecap="round" />
+                                    </svg>
                                 </button>
-                                <button class="skill-icon skill-icon--blue" type="button" title="VLANs" aria-label="VLANs">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="4" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="5" y="10" width="14" height="4" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="5" y="15" width="14" height="4" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+                                <button class="skill-icon skill-icon--blue" type="button" title="VLANs"
+                                    aria-label="VLANs">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <rect x="5" y="5" width="14" height="4" rx="1.5" fill="none"
+                                            stroke="currentColor" stroke-width="1.8" />
+                                        <rect x="5" y="10" width="14" height="4" rx="1.5" fill="none"
+                                            stroke="currentColor" stroke-width="1.8" />
+                                        <rect x="5" y="15" width="14" height="4" rx="1.5" fill="none"
+                                            stroke="currentColor" stroke-width="1.8" />
+                                    </svg>
                                 </button>
                             </div>
                         </article>
@@ -165,59 +231,162 @@
                         <article class="profile-card profile-card--skills skills-card skills-card--web">
                             <p class="card-kicker">web stack</p>
                             <div class="skill-icon-grid skill-icon-grid--card" aria-label="Web skills">
-                                <button class="skill-icon skill-icon--blue" type="button" title="Flutter" aria-label="Flutter">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 6-6h4l-6 6 6 6h-4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m10 18 4-4 2 2-2 2z" fill="currentColor"/></svg>
+                                <button class="skill-icon skill-icon--blue" type="button" title="Flutter"
+                                    aria-label="Flutter">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="m4 12 6-6h4l-6 6 6 6h-4z" fill="none" stroke="currentColor"
+                                            stroke-width="1.8" stroke-linejoin="round" />
+                                        <path d="m10 18 4-4 2 2-2 2z" fill="currentColor" />
+                                    </svg>
                                 </button>
-                                <button class="skill-icon skill-icon--cyan" type="button" title="Tailwind" aria-label="Tailwind">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14c1.8-3.8 4.2-5.7 7-5.7 2.8 0 4.2 1.4 4.9 4.1C16.8 9.8 18.7 9 21 9c-1.8 3.8-4.2 5.7-7 5.7-2.8 0-4.2-1.4-4.9-4.1C7.2 14.2 5.3 15 4 15z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                                <button class="skill-icon skill-icon--cyan" type="button" title="Tailwind"
+                                    aria-label="Tailwind">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path
+                                            d="M4 14c1.8-3.8 4.2-5.7 7-5.7 2.8 0 4.2 1.4 4.9 4.1C16.8 9.8 18.7 9 21 9c-1.8 3.8-4.2 5.7-7 5.7-2.8 0-4.2-1.4-4.9-4.1C7.2 14.2 5.3 15 4 15z"
+                                            fill="none" stroke="currentColor" stroke-width="1.8"
+                                            stroke-linejoin="round" />
+                                    </svg>
                                 </button>
-                                <button class="skill-icon skill-icon--orange" type="button" title="HTML/CSS" aria-label="HTML/CSS">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6 4 12l4 6M16 6l4 6-4 6M10 18l4-12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                <button class="skill-icon skill-icon--orange" type="button" title="HTML/CSS"
+                                    aria-label="HTML/CSS">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M8 6 4 12l4 6M16 6l4 6-4 6M10 18l4-12" fill="none"
+                                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
                                 </button>
-                                <button class="skill-icon skill-icon--green" type="button" title="Node.js" aria-label="Node.js">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 19 7v10l-7 4-7-4V7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 8v8M8 10.5l4-2.3 4 2.3M8 13.5l4 2.3 4-2.3" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                <button class="skill-icon skill-icon--green" type="button" title="Node.js"
+                                    aria-label="Node.js">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M12 3 19 7v10l-7 4-7-4V7z" fill="none" stroke="currentColor"
+                                            stroke-width="1.8" stroke-linejoin="round" />
+                                        <path d="M12 8v8M8 10.5l4-2.3 4 2.3M8 13.5l4 2.3 4-2.3" fill="none"
+                                            stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
                                 </button>
-                                <button class="skill-icon skill-icon--slate" type="button" title="Express.js" aria-label="Express.js">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h9M5 12h12M5 16h9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="m15 7 4 5-4 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                <button class="skill-icon skill-icon--slate" type="button" title="Express.js"
+                                    aria-label="Express.js">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M5 8h9M5 12h12M5 16h9" fill="none" stroke="currentColor"
+                                            stroke-width="1.8" stroke-linecap="round" />
+                                        <path d="m15 7 4 5-4 5" fill="none" stroke="currentColor" stroke-width="1.8"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
                                 </button>
-                                <button class="skill-icon skill-icon--violet" type="button" title="REST APIs" aria-label="REST APIs">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="8" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="16" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 11l6-2M9 13l6 2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                                <button class="skill-icon skill-icon--violet" type="button" title="REST APIs"
+                                    aria-label="REST APIs">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <circle cx="7" cy="12" r="2" fill="none" stroke="currentColor"
+                                            stroke-width="1.8" />
+                                        <circle cx="17" cy="8" r="2" fill="none" stroke="currentColor"
+                                            stroke-width="1.8" />
+                                        <circle cx="17" cy="16" r="2" fill="none" stroke="currentColor"
+                                            stroke-width="1.8" />
+                                        <path d="M9 11l6-2M9 13l6 2" fill="none" stroke="currentColor"
+                                            stroke-width="1.4" stroke-linecap="round" />
+                                    </svg>
                                 </button>
-                                <button class="skill-icon skill-icon--pink" type="button" title="CakePHP" aria-label="CakePHP">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15h12l-1 4H7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M7 15v-4c0-2 1.8-4 5-4s5 2 5 4v4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 7c0-1.5 1-2.5 2-3 1 .5 2 1.5 2 3" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                                <button class="skill-icon skill-icon--pink" type="button" title="CakePHP"
+                                    aria-label="CakePHP">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M6 15h12l-1 4H7z" fill="none" stroke="currentColor" stroke-width="1.8"
+                                            stroke-linejoin="round" />
+                                        <path d="M7 15v-4c0-2 1.8-4 5-4s5 2 5 4v4" fill="none" stroke="currentColor"
+                                            stroke-width="1.8" />
+                                        <path d="M10 7c0-1.5 1-2.5 2-3 1 .5 2 1.5 2 3" fill="none" stroke="currentColor"
+                                            stroke-width="1.2" stroke-linecap="round" />
+                                    </svg>
                                 </button>
                             </div>
                         </article>
 
                         <article class="profile-card profile-card--skills skills-card skills-card--shared">
                             <p class="card-kicker">tools & languages</p>
-                            <div class="skill-icon-grid skill-icon-grid--card skill-icon-grid--shared" aria-label="Shared tools and languages">
-                                <button class="skill-icon skill-icon--blue" type="button" title="Python" aria-label="Python">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h4a3 3 0 0 1 3 3v2H9a3 3 0 0 0-3 3v1H5a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3h3zM16 19h-4a3 3 0 0 1-3-3v-2h6a3 3 0 0 0 3-3v-1h1a3 3 0 0 1 3 3v3a3 3 0 0 1-3 3h-3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><circle cx="7.5" cy="8" r="0.8" fill="currentColor"/></svg>
+                            <div class="skill-icon-grid skill-icon-grid--card skill-icon-grid--shared"
+                                aria-label="Shared tools and languages">
+                                <button class="skill-icon skill-icon--blue" type="button" title="Python"
+                                    aria-label="Python">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path
+                                            d="M8 5h4a3 3 0 0 1 3 3v2H9a3 3 0 0 0-3 3v1H5a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3h3zM16 19h-4a3 3 0 0 1-3-3v-2h6a3 3 0 0 0 3-3v-1h1a3 3 0 0 1 3 3v3a3 3 0 0 1-3 3h-3z"
+                                            fill="none" stroke="currentColor" stroke-width="1.4"
+                                            stroke-linejoin="round" />
+                                        <circle cx="7.5" cy="8" r="0.8" fill="currentColor" />
+                                    </svg>
                                 </button>
-                                <button class="skill-icon skill-icon--orange" type="button" title="Java" aria-label="Java">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 18h8M9 14c0-2 1-3.5 3-5 2 1.5 3 3 3 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 4c1 1 1.4 2 1.4 3.1S12.5 9.2 12 10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                                <button class="skill-icon skill-icon--orange" type="button" title="Java"
+                                    aria-label="Java">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M8 18h8M9 14c0-2 1-3.5 3-5 2 1.5 3 3 3 5" fill="none"
+                                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                                        <path d="M12 4c1 1 1.4 2 1.4 3.1S12.5 9.2 12 10" fill="none"
+                                            stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                    </svg>
                                 </button>
-                                <button class="skill-icon skill-icon--yellow" type="button" title="JavaScript" aria-label="JavaScript">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 16c.3 1 1 1.5 2 1.5s2-.7 2-2v-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M15 9h1.2M7.5 9h1.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                                <button class="skill-icon skill-icon--yellow" type="button" title="JavaScript"
+                                    aria-label="JavaScript">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <rect x="4" y="4" width="16" height="16" rx="3" fill="none"
+                                            stroke="currentColor" stroke-width="1.8" />
+                                        <path d="M9 16c.3 1 1 1.5 2 1.5s2-.7 2-2v-6" fill="none" stroke="currentColor"
+                                            stroke-width="1.8" stroke-linecap="round" />
+                                        <path d="M15 9h1.2M7.5 9h1.2" fill="none" stroke="currentColor"
+                                            stroke-width="1.8" stroke-linecap="round" />
+                                    </svg>
                                 </button>
-                                <button class="skill-icon skill-icon--violet" type="button" title="PHP" aria-label="PHP">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h4c2 0 3 1 3 2.5S12 13 10 13H8l-1 4H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 8h4c2 0 3 1 3 2.5S20 13 18 13h-2l-1 4h-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                                <button class="skill-icon skill-icon--violet" type="button" title="PHP"
+                                    aria-label="PHP">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M6 8h4c2 0 3 1 3 2.5S12 13 10 13H8l-1 4H4z" fill="none"
+                                            stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+                                        <path d="M14 8h4c2 0 3 1 3 2.5S20 13 18 13h-2l-1 4h-2z" fill="none"
+                                            stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+                                    </svg>
                                 </button>
-                                <button class="skill-icon skill-icon--white" type="button" title="GitHub" aria-label="GitHub">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-2.8 17.6c.4.1.6-.2.6-.4v-1.5c-2.3.5-2.8-1-2.8-1-.4-.9-1-1.1-1-1.1-.8-.6.1-.6.1-.6.9.1 1.4.9 1.4.9.8 1.4 2.1 1 2.6.8.1-.6.3-1 .6-1.2-1.8-.2-3.7-.9-3.7-4.1 0-.9.3-1.7.9-2.3-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.4.9a8.6 8.6 0 0 1 4.4 0c1.7-1.1 2.4-.9 2.4-.9.5 1.1.2 1.9.1 2.1.6.6.9 1.4.9 2.3 0 3.2-1.9 3.9-3.7 4.1.3.3.7.8.7 1.7v2.5c0 .2.2.5.6.4A9 9 0 0 0 12 3z" fill="currentColor"/></svg>
+                                <button class="skill-icon skill-icon--white" type="button" title="GitHub"
+                                    aria-label="GitHub">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path
+                                            d="M12 3a9 9 0 0 0-2.8 17.6c.4.1.6-.2.6-.4v-1.5c-2.3.5-2.8-1-2.8-1-.4-.9-1-1.1-1-1.1-.8-.6.1-.6.1-.6.9.1 1.4.9 1.4.9.8 1.4 2.1 1 2.6.8.1-.6.3-1 .6-1.2-1.8-.2-3.7-.9-3.7-4.1 0-.9.3-1.7.9-2.3-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.4.9a8.6 8.6 0 0 1 4.4 0c1.7-1.1 2.4-.9 2.4-.9.5 1.1.2 1.9.1 2.1.6.6.9 1.4.9 2.3 0 3.2-1.9 3.9-3.7 4.1.3.3.7.8.7 1.7v2.5c0 .2.2.5.6.4A9 9 0 0 0 12 3z"
+                                            fill="currentColor" />
+                                    </svg>
                                 </button>
-                                <button class="skill-icon skill-icon--blue" type="button" title="Visual Studio Code" aria-label="Visual Studio Code">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 4 9 10l-4-3-2 2 3 3-3 3 2 2 4-3 7 6V4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                                <button class="skill-icon skill-icon--blue" type="button" title="Visual Studio Code"
+                                    aria-label="Visual Studio Code">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M16 4 9 10l-4-3-2 2 3 3-3 3 2 2 4-3 7 6V4z" fill="none"
+                                            stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+                                    </svg>
                                 </button>
-                                <button class="skill-icon skill-icon--sky" type="button" title="Docker Containers" aria-label="Docker Containers">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14v4H5z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 8h3v4H9zm4 0h3v4h-3zM7 16h10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                                <button class="skill-icon skill-icon--sky" type="button" title="Docker Containers"
+                                    aria-label="Docker Containers">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M5 12h14v4H5z" fill="none" stroke="currentColor" stroke-width="1.8" />
+                                        <path d="M9 8h3v4H9zm4 0h3v4h-3zM7 16h10" fill="none" stroke="currentColor"
+                                            stroke-width="1.4" stroke-linecap="round" />
+                                    </svg>
                                 </button>
-                                <button class="skill-icon skill-icon--green" type="button" title="Android Studio" aria-label="Android Studio">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18V9h10v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 9 6 5m9 4 3-4" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><circle cx="10" cy="12.5" r="0.7" fill="currentColor"/><circle cx="14" cy="12.5" r="0.7" fill="currentColor"/></svg>
+                                <button class="skill-icon skill-icon--green" type="button" title="Android Studio"
+                                    aria-label="Android Studio">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M7 18V9h10v9" fill="none" stroke="currentColor" stroke-width="1.8"
+                                            stroke-linejoin="round" />
+                                        <path d="M9 9 6 5m9 4 3-4" fill="none" stroke="currentColor" stroke-width="1.2"
+                                            stroke-linecap="round" />
+                                        <circle cx="10" cy="12.5" r="0.7" fill="currentColor" />
+                                        <circle cx="14" cy="12.5" r="0.7" fill="currentColor" />
+                                    </svg>
                                 </button>
-                                <button class="skill-icon skill-icon--amber" type="button" title="AWS Cloud" aria-label="AWS Cloud">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 16c-1.7 0-3-1.2-3-2.8S5 10.4 6.7 10.2C7.2 8.2 8.9 7 11 7c2.2 0 4 1.3 4.4 3.3H16c1.7 0 3 1.2 3 2.8s-1.3 2.9-3 2.9H7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                                <button class="skill-icon skill-icon--amber" type="button" title="AWS Cloud"
+                                    aria-label="AWS Cloud">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path
+                                            d="M7 16c-1.7 0-3-1.2-3-2.8S5 10.4 6.7 10.2C7.2 8.2 8.9 7 11 7c2.2 0 4 1.3 4.4 3.3H16c1.7 0 3 1.2 3 2.8s-1.3 2.9-3 2.9H7z"
+                                            fill="none" stroke="currentColor" stroke-width="1.8"
+                                            stroke-linejoin="round" />
+                                    </svg>
                                 </button>
                             </div>
                         </article>
@@ -423,7 +592,7 @@
         </svg>
     </button>
 
-    <script src="js/main.js" defer></script> <!-- Main JavaScript file for interactivity and animations -->
+    <script type="module" src="js/main.js"></script>
 </body>
 
 </html>
