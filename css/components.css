@@ -172,6 +172,7 @@
     gap: 1.2rem;
     margin-bottom: 3rem;
     align-items: stretch;
+    min-height: clamp(360px, 62dvh, 620px);
 }
 
 .education-skills-grid {
@@ -193,7 +194,7 @@
 }
 
 .profile-card--about-left {
-    min-height: 420px;
+    min-height: clamp(360px, 62dvh, 620px);
 }
 
 .card-kicker {
@@ -240,7 +241,7 @@
 
 .dice-stage {
     position: relative;
-    min-height: 420px;
+    min-height: clamp(360px, 62dvh, 620px);
     border-radius: 0;
     overflow: hidden;
     background: transparent;
@@ -494,15 +495,19 @@
 }
 
 /* Editorial Project Accordion */
+#projects>h2 {
+    margin-bottom: clamp(1.25rem, 3vw, 2rem);
+}
+
 .project-accordion {
     display: flex;
     flex-direction: column;
-    gap: 0.9rem;
+    gap: clamp(0.7rem, 1.5vw, 1rem);
 }
 
 .project-panel {
     display: block;
-    padding: 1rem;
+    padding: clamp(0.7rem, 1.5vw, 1rem);
     border-radius: 18px;
     background: linear-gradient(180deg, rgba(40, 43, 49, 0.94) 0%, rgba(40, 43, 49, 0.94) 10%, rgba(26, 29, 34, 0.98) 100%);
     border: 0;
@@ -882,11 +887,12 @@
     }
 
     .project-toggle {
-        padding: 1rem 1rem 0.9rem;
+        padding: 0.9rem 0.85rem 0.8rem;
     }
 
-    .project-content {
-        padding: 0 1rem 1rem;
+    .project-content,
+    .project-panel.open .project-content {
+        padding: 0 0.85rem 0.9rem;
     }
 }
 

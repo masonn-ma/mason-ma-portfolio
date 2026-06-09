@@ -78,6 +78,7 @@
 
     .about-grid {
         grid-template-columns: 1fr;
+        min-height: auto;
     }
 
     .profile-card--about-left {
@@ -85,7 +86,7 @@
     }
 
     .dice-stage {
-        min-height: 320px;
+        min-height: clamp(240px, 38dvh, 320px);
     }
 
     .education-skills-grid {
@@ -94,6 +95,14 @@
 
     .skills-grid {
         grid-template-columns: 1fr;
+    }
+
+    #about,
+    #education {
+        min-height: 100vh;
+        min-height: 100svh;
+        min-height: 100dvh;
+        padding-block: clamp(1.5rem, 4dvh, 3rem);
     }
 }
 

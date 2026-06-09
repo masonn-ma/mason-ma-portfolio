@@ -8,6 +8,30 @@ section {
     color: rgba(255, 255, 255, 0.88);
 }
 
+#about,
+#education {
+    min-height: 100vh;
+    min-height: 100svh;
+    min-height: 100dvh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: clamp(2rem, 5dvh, 4rem);
+    margin-bottom: 0;
+}
+
+#about .about-grid,
+#education .education-skills-grid {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+#education>h2 {
+    margin-top: 0;
+    margin-bottom: clamp(1.25rem, 3dvh, 2rem);
+}
+
 section p,
 section li {
     color: rgba(255, 255, 255, 0.78);

@@ -21,15 +21,12 @@
     <title>Mason Ma's Portfolio</title>
 
     <!-- Favicons -->
-    <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicons/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="48x48" href="imgs/favicons/favicon-48x48.png">
-    <link rel="icon" href="imgs/favicons/favicon.ico">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="imgs/favicons/apple-touch-icon.png">
-
-    <link rel="icon" type="image/png" sizes="192x192" href="imgs/favicons/favicon-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="imgs/favicons/favicon-512x512.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicons/favicon-16x16.png?v=20260610">
+    <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicons/favicon-32x32.png?v=20260610">
+    <link rel="icon" type="image/png" sizes="48x48" href="imgs/favicons/favicon-48x48.png?v=20260610">
+    <link rel="icon" type="image/png" sizes="192x192" href="imgs/favicons/favicon-192x192.png?v=20260610">
+    <link rel="icon" type="image/png" sizes="512x512" href="imgs/favicons/favicon-512x512.png?v=20260610">
+    <link rel="apple-touch-icon" href="imgs/favicons/favicon-192x192.png?v=20260610">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/base.css">
@@ -396,11 +393,38 @@
 
             <section id="projects"> <!-- Editorial accordion project cards -->
                 <h2>projects.</h2>
+
                 <div class="project-accordion" aria-label="Featured projects">
+                    <article class="project-panel" data-project="greenroute">
+                        <button class="project-toggle" type="button" aria-expanded="false"
+                            aria-controls="project-content-greenroute" id="project-trigger-greenroute">
+                            <span class="project-kicker">Website & Android App</span>
+                            <span class="project-title">GreenRoute HCMC</span>
+                            <span class="project-summary">Pollution-aware EV routing platform blending mapping, AQI
+                                modeling, and mobile delivery.</span>
+                        </button>
+                        <div class="project-content" id="project-content-greenroute" role="region"
+                            aria-labelledby="project-trigger-greenroute" hidden>
+                            <ul class="project-tags">
+                                <li>Node.js</li>
+                                <li>Express</li>
+                                <li>Leaflet</li>
+                                <li>IndexedDB</li>
+                                <li>Android WebView</li>
+                            </ul>
+                            <ul class="project-notes">
+                                <li>Built AQI-aware EV route planning using OSRM and geocoding APIs.</li>
+                                <li>Created backend endpoints for routing, AQI zones, and EV profile management.</li>
+                                <li>Deployed on Render and integrated a WebView wrapper for Android distribution.</li>
+                                <li>Managed a team of four with WBS planning and decision logs.</li>
+                            </ul>
+                        </div>
+                    </article>
+
                     <article class="project-panel open" data-project="ecommerce">
                         <button class="project-toggle" type="button" aria-expanded="true"
                             aria-controls="project-content-ecommerce" id="project-trigger-ecommerce">
-                            <span class="project-kicker">Team Project</span>
+                            <span class="project-kicker">Website</span>
                             <span class="project-title">Ecommerce Website</span>
                             <span class="project-summary">Node.js commerce workflow with auth, sessions, and secure
                                 checkout patterns.</span>
@@ -440,32 +464,6 @@
                                 <li>Designed a virtual network architecture for a four-story building environment.</li>
                                 <li>Configured gateways, interfaces, and addressing strategy for wired devices.</li>
                                 <li>Planned for 135 users with up to 30% growth capacity.</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <article class="project-panel" data-project="greenroute">
-                        <button class="project-toggle" type="button" aria-expanded="false"
-                            aria-controls="project-content-greenroute" id="project-trigger-greenroute">
-                            <span class="project-kicker">Capstone Build</span>
-                            <span class="project-title">GreenRoute HCMC</span>
-                            <span class="project-summary">Pollution-aware EV routing platform blending mapping, AQI
-                                modeling, and mobile delivery.</span>
-                        </button>
-                        <div class="project-content" id="project-content-greenroute" role="region"
-                            aria-labelledby="project-trigger-greenroute" hidden>
-                            <ul class="project-tags">
-                                <li>Node.js</li>
-                                <li>Express</li>
-                                <li>Leaflet</li>
-                                <li>IndexedDB</li>
-                                <li>Android WebView</li>
-                            </ul>
-                            <ul class="project-notes">
-                                <li>Built AQI-aware EV route planning using OSRM and geocoding APIs.</li>
-                                <li>Created backend endpoints for routing, AQI zones, and EV profile management.</li>
-                                <li>Deployed on Render and integrated a WebView wrapper for Android distribution.</li>
-                                <li>Managed a team of four with WBS planning and decision logs.</li>
                             </ul>
                         </div>
                     </article>
