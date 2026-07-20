@@ -576,17 +576,21 @@
     visibility: hidden;
     padding: 0 1.3rem 0;
     box-sizing: border-box;
-    transition: max-height 0.4s ease-in-out, 
-                opacity 0.3s ease-in-out, 
-                padding 0.4s ease-in-out,
-                visibility 0.4s;
+    transition: max-height 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+                opacity 0.35s cubic-bezier(0.25, 1, 0.5, 1) 0.05s,
+                padding 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                visibility 0s linear 0.4s;
 }
 
 .project-panel.open .project-content {
-    max-height: 800px; /* Safe upper bound for project content */
+    max-height: 999px; /* overridden by JS with real height */
     opacity: 1;
     visibility: visible;
     padding: 0 1.3rem 1.2rem;
+    transition: max-height 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+                opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+                padding 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                visibility 0s linear 0s;
 }
 
 .project-tags,
