@@ -193,7 +193,7 @@ html:not(.js) .project-cue {
     visibility: hidden;
     transition:
         grid-template-rows var(--dur-2) var(--ease-out),
-        visibility 0s linear var(--dur-2);
+        visibility 0s;
 }
 
 .js .project.is-open .project-body {
@@ -208,6 +208,13 @@ html:not(.js) .project-cue {
     min-height: 0;
     overflow: hidden;
     padding-inline: clamp(1.1rem, 2vw, 1.5rem);
+}
+
+.js .project-body-inner {
+    padding-bottom: 0;
+}
+
+.js .project.is-open .project-body-inner {
     padding-bottom: clamp(1.1rem, 2vw, 1.5rem);
 }
 
