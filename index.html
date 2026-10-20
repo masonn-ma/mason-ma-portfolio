@@ -2,13 +2,12 @@
 <html lang="en">
 
 <head>
-    <!-- Meta tags for SEO and responsiveness -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Mason Ma - IT Undergraduate specializing in Enterprise Systems Development and Cyber Security. Portfolio featuring technical projects and photography.">
     <meta name="author" content="Mason Ma">
-    <meta name="theme-color" content="#111827">
+    <meta name="theme-color" content="#0F1116">
     <meta property="og:title" content="Mason Ma | IT Portfolio">
     <meta property="og:description" content="IT Undergraduate - Enterprise Systems Development & Cyber Security">
     <meta property="og:type" content="website">
@@ -17,10 +16,8 @@
     <meta property="og:image:alt" content="Mason Ma portfolio hero preview">
     <link rel="canonical" href="https://masonn-ma.github.io/mason-ma-portfolio/">
 
-    <!-- Title of the webpage -->
     <title>Mason Ma's Portfolio</title>
 
-    <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicons/favicon-16x16.png?v=20260610">
     <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicons/favicon-32x32.png?v=20260610">
     <link rel="icon" type="image/png" sizes="48x48" href="imgs/favicons/favicon-48x48.png?v=20260610">
@@ -28,534 +25,389 @@
     <link rel="icon" type="image/png" sizes="512x512" href="imgs/favicons/favicon-512x512.png?v=20260610">
     <link rel="apple-touch-icon" href="imgs/favicons/favicon-192x192.png?v=20260610">
 
-    <!-- CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap">
+
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
+
+    <script>
+        document.documentElement.classList.add('js');
+        window.__siteReady = false;
+        window.setTimeout(function () {
+            if (!window.__siteReady) {
+                document.documentElement.classList.add('reveal-all');
+            }
+        }, 4000);
+    </script>
 </head>
 
 <body>
 
-    <header>
-        <!-- Hero Section with Canvas Background -->
-        <canvas id="hero-network" aria-hidden="true"></canvas>
-        <nav class="nav-list" aria-label="Primary navigation">
-            <a class="hero-travel-link" href="docs/Github_Resume_MasonMa.pdf" target="_blank"
-                rel="noopener noreferrer" aria-label="Open Mason Ma resume PDF">Resume</a>
-            <a class="hero-travel-link" href="https://masonn-ma.github.io/coursework-reports" target="_blank"
-                rel="noopener noreferrer" aria-label="Open academic archive">Academic Archive</a>
-            <a class="hero-travel-link" href="#" aria-label="Open travel list popup">Travel Wishlist</a>
-        </nav>
-        <div class="header-inner">
-            <h1>Mason Ma</h1>
-            <p style="margin-top: 0;">IT Undergraduate <br></p>
-            <p style="margin-top: 0;">Cybersecurity | Digital Forensics | OSINT | Backend Development</p>
-            <div class="contact-links">
-                <a class="contact-link contact-email" href="mailto:masonma2005@gmail.com" aria-label="Email Mason Ma"
-                    title="masonma2005@gmail.com">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                        <path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" fill="none"
-                            stroke="currentColor" stroke-width="1.8" />
-                        <path d="m4 8 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </a>
-                <a class="contact-link contact-github" href="https://github.com/masonn-ma" target="_blank"
-                    rel="me noopener noreferrer" aria-label="GitHub Profile" title="masonn-ma">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                        <path
-                            d="M12 2a10 10 0 0 0-3.162 19.487c.5.092.683-.217.683-.483 0-.238-.009-.868-.014-1.703-2.782.604-3.369-1.341-3.369-1.341-.455-1.157-1.111-1.466-1.111-1.466-.909-.62.069-.608.069-.608 1.005.07 1.534 1.032 1.534 1.032.893 1.53 2.344 1.088 2.915.832.091-.647.349-1.089.636-1.339-2.221-.253-4.556-1.111-4.556-4.944 0-1.092.39-1.984 1.03-2.683-.103-.253-.446-1.271.098-2.649 0 0 .84-.269 2.75 1.025A9.56 9.56 0 0 1 12 6.844c.85.004 1.706.115 2.505.337 1.909-1.294 2.748-1.025 2.748-1.025.546 1.378.203 2.396.1 2.649.641.699 1.029 1.591 1.029 2.683 0 3.842-2.339 4.688-4.567 4.936.359.309.678.92.678 1.855 0 1.339-.012 2.42-.012 2.749 0 .269.18.579.688.481A10 10 0 0 0 12 2z"
-                            fill="currentColor" />
-                    </svg>
-                </a>
-                <a class="contact-link contact-linkedin" href="https://www.linkedin.com/in/mason-ma-433324335"
-                    target="_blank" rel="me noopener noreferrer" aria-label="LinkedIn Profile" title="Mason Ma">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                        <path
-                            d="M6.94 8.5a1.56 1.56 0 1 1 0-3.12 1.56 1.56 0 0 1 0 3.12zM5.56 9.75h2.76v8.69H5.56V9.75zm4.48 0h2.65v1.19h.04c.37-.7 1.27-1.44 2.62-1.44 2.8 0 3.31 1.84 3.31 4.22v4.72H15.9v-4.18c0-1-.02-2.29-1.4-2.29-1.4 0-1.62 1.09-1.62 2.22v4.25h-2.84V9.75z"
-                            fill="currentColor" />
-                    </svg>
-                </a>
-                <a class="contact-link contact-instagram" href="https://www.instagram.com/mason.captures/"
-                    target="_blank" rel="noopener noreferrer" aria-label="Photography Instagram Account"
-                    title="Photography Instagram Account">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor"
-                            stroke-width="1.8" />
-                        <circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8" />
-                        <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" />
-                    </svg>
-                </a>
-            </div>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <nav class="site-nav" aria-label="Primary">
+        <div class="site-nav-inner">
+            <a class="nav-brand" href="#top">Mason Ma</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#photography">Photography</a></li>
+                <li><a href="#travel">Travel</a></li>
+            </ul>
+            <a class="nav-resume" href="docs/Github_Resume_MasonMa.pdf" target="_blank"
+                rel="noopener noreferrer">Resume</a>
         </div>
-        <!-- Scroll Cue -->
-        <a class="hero-scroll-cue" href="#about" aria-label="Scroll to content">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path d="M6 9.5 12 15.5 18 9.5" fill="none" stroke="currentColor" stroke-width="2.4"
-                    stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-        </a>
+    </nav>
+
+    <header class="hero" id="top">
+        <canvas id="hero-network" aria-hidden="true"></canvas>
+        <div class="hero-inner">
+            <h1>Mason Ma</h1>
+            <p class="hero-lede">IT Undergraduate — Cybersecurity, Digital Forensics, OSINT, Backend
+                Development</p>
+            <p class="hero-links">
+                <a href="mailto:masonma2005@gmail.com">Email</a>
+                <a href="https://github.com/masonn-ma" target="_blank" rel="me noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/mason-ma-433324335" target="_blank"
+                    rel="me noopener noreferrer">LinkedIn</a>
+                <a href="https://www.instagram.com/mason.captures/" target="_blank"
+                    rel="noopener noreferrer">Instagram</a>
+            </p>
+        </div>
     </header>
 
-    <main class="content-layer">
-        <!-- Main content container -->
+    <main id="main">
         <div class="container">
-            <section id="about">
 
-                <div class="about-grid">
-                    <article class="profile-card profile-card--about profile-card--about-left">
-                        <h2>about me.</h2>
-                        <p class="profile-card-copy profile-card-copy--lead">Third-year Information Technology
-                            undergraduate at RMIT University Vietnam, focusing on cybersecurity, digital
-                            forensics, OSINT, and backend development. I enjoy working on projects that combine
-                            practical software development with
-                            security concepts, including API development, network design, route planning systems, and
-                            forensic investigation
-                            practice.
-                        </p>
-                    </article>
+            <section id="about" aria-labelledby="about-title">
+                <h2 id="about-title" data-reveal>about me.</h2>
+                <p class="about-copy" data-reveal>Information Technology undergraduate at RMIT University Vietnam,
+                    focusing on cybersecurity, digital forensics, OSINT, and backend development. I enjoy working on
+                    projects that combine practical software development with security concepts, including API
+                    development, network design, route planning systems, and forensic investigation practice.
+                </p>
+            </section>
 
-                    <div class="dice-stage" aria-hidden="true">
-                        <canvas id="dice-network"></canvas>
+            <section id="education" aria-labelledby="education-title">
+                <h2 id="education-title" data-reveal>education &amp; skills.</h2>
+
+                <div class="education-layout">
+                <div class="education-block" data-reveal>
+                    <img class="education-logo" src="imgs/logo/rmit-logo-red.png" alt="RMIT University Vietnam"
+                        width="64" height="64">
+                    <div class="education-detail">
+                        <p class="education-years">2023–Present</p>
+                        <h3 class="education-degree">Bachelor of Information Technology</h3>
+                        <p class="education-meta">RMIT University Vietnam</p>
+                        <p class="education-meta">Minors: Enterprise Systems Development &amp; Cyber Security</p>
                     </div>
+                </div>
+
+                <div class="skills-groups">
+                    <div class="skills-group" data-reveal>
+                        <h3>cybersecurity stack</h3>
+                        <ul class="skills-list">
+                            <li>Wireshark</li>
+                            <li>Burp Suite</li>
+                            <li>Virtual Machines</li>
+                            <li>Kali Linux</li>
+                            <li>Nmap</li>
+                            <li>Autopsy</li>
+                            <li>Cisco Packet Tracer</li>
+                            <li>VLANs</li>
+                        </ul>
+                    </div>
+
+                    <div class="skills-group" data-reveal>
+                        <h3>web stack</h3>
+                        <ul class="skills-list">
+                            <li>Flutter</li>
+                            <li>Tailwind</li>
+                            <li>HTML/CSS</li>
+                            <li>Node.js</li>
+                            <li>Express.js</li>
+                            <li>REST APIs</li>
+                            <li>CakePHP</li>
+                        </ul>
+                    </div>
+
+                    <div class="skills-group" data-reveal>
+                        <h3>tools &amp; languages</h3>
+                        <ul class="skills-list">
+                            <li>Python</li>
+                            <li>Java</li>
+                            <li>JavaScript</li>
+                            <li>PHP</li>
+                            <li>GitHub</li>
+                            <li>Visual Studio Code</li>
+                            <li>Docker Containers</li>
+                            <li>Android Studio</li>
+                            <li>AWS Cloud</li>
+                        </ul>
+                    </div>
+                </div>
                 </div>
             </section>
 
-            <section id="education">
-                <h2>education & skills.</h2>
-                <div class="education-skills-grid">
-                    <article class="profile-card profile-card--education skills-card">
-                        <div class="timeline timeline--compact">
-                            <div class="timeline-item">
-                                <div class="timeline-item-logo">
-                                    <img src="imgs/logo/rmit-logo-red.png" alt="RMIT University Logo">
-                                </div>
-                                <div class="timeline-item-content">
-                                    <p>
-                                        <span style="color: var(--accent-color);">2023 - Present</span><br>
-                                        <strong>BACHELOR OF INFORMATION TECHNOLOGY</strong><br>
-                                        Minors: Enterprise Systems Development & Cyber Security
-                                    </p>
-                                </div>
+            <section id="projects" aria-labelledby="projects-title">
+                <h2 id="projects-title" data-reveal>projects.</h2>
+
+                <div class="projects">
+                    <article class="project" data-reveal>
+                        <h3 class="project-heading">
+                            <button class="project-toggle" type="button" aria-expanded="false"
+                                aria-controls="project-greenroute-body" id="project-greenroute-trigger">
+                                <span class="project-kicker">Website &amp; Android App</span>
+                                <span class="project-title">GreenRoute HCMC</span>
+                                <span class="project-summary">Pollution-aware EV routing platform blending mapping,
+                                    AQI modeling, and mobile delivery.</span>
+                                <span class="project-cue" aria-hidden="true"></span>
+                            </button>
+                        </h3>
+                        <div class="project-body" id="project-greenroute-body" role="region"
+                            aria-labelledby="project-greenroute-trigger">
+                            <div class="project-body-inner">
+                                <ul class="project-tags">
+                                    <li>Node.js</li>
+                                    <li>Express</li>
+                                    <li>Leaflet</li>
+                                    <li>IndexedDB</li>
+                                    <li>Android WebView</li>
+                                </ul>
+                                <ul class="project-notes">
+                                    <li>Built AQI-aware EV route planning using OSRM and geocoding APIs.</li>
+                                    <li>Created backend endpoints for routing, AQI zones, and EV profile management.
+                                    </li>
+                                    <li>Deployed on Render and integrated a WebView wrapper for Android distribution.
+                                    </li>
+                                    <li>Managed a team of four with WBS planning and decision logs.</li>
+                                </ul>
+                                <p class="project-link">
+                                    <a href="https://github.com/masonn-ma/green-route-public" target="_blank"
+                                        rel="noopener noreferrer">View repository</a>
+                                </p>
                             </div>
                         </div>
                     </article>
 
-                    <div class="skills-grid">
-                        <article class="profile-card profile-card--skills skills-card skills-card--cyber">
-                            <p class="card-kicker">cybersecurity stack</p>
-                            <div class="skill-icon-grid skill-icon-grid--card" aria-label="Cybersecurity skills">
-                                <button class="skill-icon skill-icon--cyan" type="button" title="Wireshark"
-                                    aria-label="Wireshark">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                                        <path
-                                            d="M12 3v3m0 12v3M3 12h3m12 0h3M6.8 6.8l2.1 2.1m6.2 6.2 2.1 2.1m0-10.4-2.1 2.1M8.9 15.1l-2.1 2.1"
-                                            fill="none" stroke="currentColor" stroke-width="1.8"
-                                            stroke-linecap="round" />
-                                        <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor"
-                                            stroke-width="1.8" />
-                                    </svg>
-                                </button>
-                                <button class="skill-icon skill-icon--orange" type="button" title="Burp Suite"
-                                    aria-label="Burp Suite">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                                        <path d="M7 6h10v2l-1 6H8L7 8V6zm1 8h8l-.7 4H8.7L8 14zm2-10h4" fill="none"
-                                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
-                                        <path d="M9 2.5 8 6h8l-1-3.5" fill="none" stroke="currentColor"
-                                            stroke-width="1.8" stroke-linejoin="round" />
-                                    </svg>
-                                </button>
-                                <button class="skill-icon skill-icon--blue" type="button" title="Virtual Machines"
-                                    aria-label="Virtual Machines">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                                        <rect x="5" y="6" width="14" height="9" rx="1.5" fill="none"
-                                            stroke="currentColor" stroke-width="1.8" />
-                                        <path d="M9 19h6M11 15v4" fill="none" stroke="currentColor" stroke-width="1.8"
-                                            stroke-linecap="round" />
-                                    </svg>
-                                </button>
-                                <button class="skill-icon skill-icon--sky" type="button" title="Kali Linux"
-                                    aria-label="Kali Linux">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                                        <path d="M12 3.2 19 7v10.8l-7 3.9-7-3.9V7z" fill="none" stroke="currentColor"
-                                            stroke-width="1.6" stroke-linejoin="round" />
-                                        <path d="M8.1 7.8h1.9v4l3.9-4h2.2l-4 4.2 4.1 4.2H14l-4-4v4H8.1z"
-                                            fill="currentColor" />
-                                    </svg>
-                                </button>
-                                <button class="skill-icon skill-icon--green" type="button" title="Nmap"
-                                    aria-label="Nmap">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                                        <circle cx="12" cy="12" r="7" fill="none" stroke="currentColor"
-                                            stroke-width="1.8" />
-                                        <circle cx="12" cy="12" r="2" fill="currentColor" />
-                                        <path d="m12 5 1.2 3.6H17l-3 2.2 1.2 3.6-3.2-2.3-3.2 2.3L10 10.8 7 8.6h3.8z"
-                                            fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"
-                                            opacity="0.8" />
-                                    </svg>
-                                </button>
-                                <button class="skill-icon skill-icon--slate" type="button" title="Autopsy"
-                                    aria-label="Autopsy">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                                        <path d="M4 8h16v10H4z" fill="none" stroke="currentColor" stroke-width="1.8" />
-                                        <path d="M8 8V5h8v3" fill="none" stroke="currentColor" stroke-width="1.8" />
-                                        <path d="M7 12h10M7 15h7" fill="none" stroke="currentColor" stroke-width="1.8"
-                                            stroke-linecap="round" />
-                                    </svg>
-                                </button>
-                                <button class="skill-icon skill-icon--red" type="button" title="Cisco Packet Tracer"
-                                    aria-label="Cisco Packet Tracer">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                                        <path d="M5 15V9l7-4 7 4v6l-7 4-7-4z" fill="none" stroke="currentColor"
-                                            stroke-width="1.8" stroke-linejoin="round" />
-                                        <path d="M12 5v14M5 9l7 4 7-4" fill="none" stroke="currentColor"
-                                            stroke-width="1.2" stroke-linecap="round" />
-                                    </svg>
-                                </button>
-                                <button class="skill-icon skill-icon--blue" type="button" title="VLANs"
-                                    aria-label="VLANs">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                                        <rect x="5" y="5" width="14" height="4" rx="1.5" fill="none"
-                                            stroke="currentColor" stroke-width="1.8" />
-                                        <rect x="5" y="10" width="14" height="4" rx="1.5" fill="none"
-                                            stroke="currentColor" stroke-width="1.8" />
-                                        <rect x="5" y="15" width="14" height="4" rx="1.5" fill="none"
-                                            stroke="currentColor" stroke-width="1.8" />
-                                    </svg>
-                                </button>
+                    <article class="project is-open" data-reveal>
+                        <h3 class="project-heading">
+                            <button class="project-toggle" type="button" aria-expanded="true"
+                                aria-controls="project-ecommerce-body" id="project-ecommerce-trigger">
+                                <span class="project-kicker">Website</span>
+                                <span class="project-title">Ecommerce Website</span>
+                                <span class="project-summary">Node.js commerce workflow with auth, sessions, and
+                                    secure checkout patterns.</span>
+                                <span class="project-cue" aria-hidden="true"></span>
+                            </button>
+                        </h3>
+                        <div class="project-body" id="project-ecommerce-body" role="region"
+                            aria-labelledby="project-ecommerce-trigger">
+                            <div class="project-body-inner">
+                                <ul class="project-tags">
+                                    <li>Node.js</li>
+                                    <li>Express</li>
+                                    <li>MongoDB</li>
+                                    <li>REST API</li>
+                                </ul>
+                                <ul class="project-notes">
+                                    <li>Led a team of four to deliver the end-to-end ecommerce experience.</li>
+                                    <li>Built authentication and cart session logic for account-level persistence.</li>
+                                    <li>Implemented API-level anti-bot protection using reCAPTCHA.</li>
+                                </ul>
+                                <p class="project-link">
+                                    <a href="https://github.com/masonn-ma/diversity-ecoms-website" target="_blank"
+                                        rel="noopener noreferrer">View repository</a>
+                                </p>
                             </div>
-                        </article>
-
-                        <article class="profile-card profile-card--skills skills-card skills-card--web">
-                            <p class="card-kicker">web stack</p>
-                            <div class="skill-icon-grid skill-icon-grid--card" aria-label="Web skills">
-                                <button class="skill-icon skill-icon--blue" type="button" title="Flutter"
-                                    aria-label="Flutter">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                                        <path d="m4 12 6-6h4l-6 6 6 6h-4z" fill="none" stroke="currentColor"
-                                            stroke-width="1.8" stroke-linejoin="round" />
-                                        <path d="m10 18 4-4 2 2-2 2z" fill="currentColor" />
-                                    </svg>
-                                </button>
-                                <button class="skill-icon skill-icon--cyan" type="button" title="Tailwind"
-                                    aria-label="Tailwind">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                                        <path
-                                            d="M4 14c1.8-3.8 4.2-5.7 7-5.7 2.8 0 4.2 1.4 4.9 4.1C16.8 9.8 18.7 9 21 9c-1.8 3.8-4.2 5.7-7 5.7-2.8 0-4.2-1.4-4.9-4.1C7.2 14.2 5.3 15 4 15z"
-                                            fill="none" stroke="currentColor" stroke-width="1.8"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </button>
-                                <button class="skill-icon skill-icon--orange" type="button" title="HTML/CSS"
-                                    aria-label="HTML/CSS">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                                        <path d="M8 6 4 12l4 6M16 6l4 6-4 6M10 18l4-12" fill="none"
-                                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </button>
-                                <button class="skill-icon skill-icon--green" type="button" title="Node.js"
-                                    aria-label="Node.js">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                                        <path d="M12 3 19 7v10l-7 4-7-4V7z" fill="none" stroke="currentColor"
-                                            stroke-width="1.8" stroke-linejoin="round" />
-                                        <path d="M12 8v8M8 10.5l4-2.3 4 2.3M8 13.5l4 2.3 4-2.3" fill="none"
-                                            stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </button>
-                                <button class="skill-icon skill-icon--slate" type="button" title="Express.js"
-                                    aria-label="Express.js">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                                        <path d="M5 8h9M5 12h12M5 16h9" fill="none" stroke="currentColor"
-                                            stroke-width="1.8" stroke-linecap="round" />
-                                        <path d="m15 7 4 5-4 5" fill="none" stroke="currentColor" stroke-width="1.8"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                </button>
-                                <button class="skill-icon skill-icon--violet" type="button" title="REST APIs"
-                                    aria-label="REST APIs">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                                        <circle cx="7" cy="12" r="2" fill="none" stroke="currentColor"
-                                            stroke-width="1.8" />
-                                        <circle cx="17" cy="8" r="2" fill="none" stroke="currentColor"
-                                            stroke-width="1.8" />
-                                        <circle cx="17" cy="16" r="2" fill="none" stroke="currentColor"
-                                            stroke-width="1.8" />
-                                        <path d="M9 11l6-2M9 13l6 2" fill="none" stroke="currentColor"
-                                            stroke-width="1.4" stroke-linecap="round" />
-                                    </svg>
-                                </button>
-                                <button class="skill-icon skill-icon--pink" type="button" title="CakePHP"
-                                    aria-label="CakePHP">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                                        <path d="M6 15h12l-1 4H7z" fill="none" stroke="currentColor" stroke-width="1.8"
-                                            stroke-linejoin="round" />
-                                        <path d="M7 15v-4c0-2 1.8-4 5-4s5 2 5 4v4" fill="none" stroke="currentColor"
-                                            stroke-width="1.8" />
-                                        <path d="M10 7c0-1.5 1-2.5 2-3 1 .5 2 1.5 2 3" fill="none" stroke="currentColor"
-                                            stroke-width="1.2" stroke-linecap="round" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </article>
-
-                        <article class="profile-card profile-card--skills skills-card skills-card--shared">
-                            <p class="card-kicker">tools & languages</p>
-                            <div class="skill-icon-grid skill-icon-grid--card skill-icon-grid--shared"
-                                aria-label="Shared tools and languages">
-                                <button class="skill-icon skill-icon--blue" type="button" title="Python"
-                                    aria-label="Python">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                                        <path
-                                            d="M8 5h4a3 3 0 0 1 3 3v2H9a3 3 0 0 0-3 3v1H5a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3h3zM16 19h-4a3 3 0 0 1-3-3v-2h6a3 3 0 0 0 3-3v-1h1a3 3 0 0 1 3 3v3a3 3 0 0 1-3 3h-3z"
-                                            fill="none" stroke="currentColor" stroke-width="1.4"
-                                            stroke-linejoin="round" />
-                                        <circle cx="7.5" cy="8" r="0.8" fill="currentColor" />
-                                    </svg>
-                                </button>
-                                <button class="skill-icon skill-icon--orange" type="button" title="Java"
-                                    aria-label="Java">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                                        <path d="M8 18h8M9 14c0-2 1-3.5 3-5 2 1.5 3 3 3 5" fill="none"
-                                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
-                                        <path d="M12 4c1 1 1.4 2 1.4 3.1S12.5 9.2 12 10" fill="none"
-                                            stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
-                                    </svg>
-                                </button>
-                                <button class="skill-icon skill-icon--yellow" type="button" title="JavaScript"
-                                    aria-label="JavaScript">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                                        <rect x="4" y="4" width="16" height="16" rx="3" fill="none"
-                                            stroke="currentColor" stroke-width="1.8" />
-                                        <path d="M9 16c.3 1 1 1.5 2 1.5s2-.7 2-2v-6" fill="none" stroke="currentColor"
-                                            stroke-width="1.8" stroke-linecap="round" />
-                                        <path d="M15 9h1.2M7.5 9h1.2" fill="none" stroke="currentColor"
-                                            stroke-width="1.8" stroke-linecap="round" />
-                                    </svg>
-                                </button>
-                                <button class="skill-icon skill-icon--violet" type="button" title="PHP"
-                                    aria-label="PHP">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                                        <path d="M6 8h4c2 0 3 1 3 2.5S12 13 10 13H8l-1 4H4z" fill="none"
-                                            stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
-                                        <path d="M14 8h4c2 0 3 1 3 2.5S20 13 18 13h-2l-1 4h-2z" fill="none"
-                                            stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
-                                    </svg>
-                                </button>
-                                <button class="skill-icon skill-icon--white" type="button" title="GitHub"
-                                    aria-label="GitHub">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                                        <path
-                                            d="M12 3a9 9 0 0 0-2.8 17.6c.4.1.6-.2.6-.4v-1.5c-2.3.5-2.8-1-2.8-1-.4-.9-1-1.1-1-1.1-.8-.6.1-.6.1-.6.9.1 1.4.9 1.4.9.8 1.4 2.1 1 2.6.8.1-.6.3-1 .6-1.2-1.8-.2-3.7-.9-3.7-4.1 0-.9.3-1.7.9-2.3-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.4.9a8.6 8.6 0 0 1 4.4 0c1.7-1.1 2.4-.9 2.4-.9.5 1.1.2 1.9.1 2.1.6.6.9 1.4.9 2.3 0 3.2-1.9 3.9-3.7 4.1.3.3.7.8.7 1.7v2.5c0 .2.2.5.6.4A9 9 0 0 0 12 3z"
-                                            fill="currentColor" />
-                                    </svg>
-                                </button>
-                                <button class="skill-icon skill-icon--blue" type="button" title="Visual Studio Code"
-                                    aria-label="Visual Studio Code">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                                        <path d="M16 4 9 10l-4-3-2 2 3 3-3 3 2 2 4-3 7 6V4z" fill="none"
-                                            stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
-                                    </svg>
-                                </button>
-                                <button class="skill-icon skill-icon--sky" type="button" title="Docker Containers"
-                                    aria-label="Docker Containers">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                                        <path d="M5 12h14v4H5z" fill="none" stroke="currentColor" stroke-width="1.8" />
-                                        <path d="M9 8h3v4H9zm4 0h3v4h-3zM7 16h10" fill="none" stroke="currentColor"
-                                            stroke-width="1.4" stroke-linecap="round" />
-                                    </svg>
-                                </button>
-                                <button class="skill-icon skill-icon--green" type="button" title="Android Studio"
-                                    aria-label="Android Studio">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                                        <path d="M7 18V9h10v9" fill="none" stroke="currentColor" stroke-width="1.8"
-                                            stroke-linejoin="round" />
-                                        <path d="M9 9 6 5m9 4 3-4" fill="none" stroke="currentColor" stroke-width="1.2"
-                                            stroke-linecap="round" />
-                                        <circle cx="10" cy="12.5" r="0.7" fill="currentColor" />
-                                        <circle cx="14" cy="12.5" r="0.7" fill="currentColor" />
-                                    </svg>
-                                </button>
-                                <button class="skill-icon skill-icon--amber" type="button" title="AWS Cloud"
-                                    aria-label="AWS Cloud">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                                        <path
-                                            d="M7 16c-1.7 0-3-1.2-3-2.8S5 10.4 6.7 10.2C7.2 8.2 8.9 7 11 7c2.2 0 4 1.3 4.4 3.3H16c1.7 0 3 1.2 3 2.8s-1.3 2.9-3 2.9H7z"
-                                            fill="none" stroke="currentColor" stroke-width="1.8"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </section>
-
-            <section id="projects"> <!-- Editorial accordion project cards -->
-                <h2>projects.</h2>
-
-                <div class="project-accordion" aria-label="Featured projects">
-                    <article class="project-panel" data-project="greenroute">
-                        <button class="project-toggle" type="button" aria-expanded="false"
-                            aria-controls="project-content-greenroute" id="project-trigger-greenroute">
-                            <span class="project-kicker">Website & Android App</span>
-                            <span class="project-title">GreenRoute HCMC</span>
-                            <span class="project-summary">Pollution-aware EV routing platform blending mapping, AQI
-                                modeling, and mobile delivery.</span>
-                        </button>
-                        <div class="project-content" id="project-content-greenroute" role="region"
-                            aria-labelledby="project-trigger-greenroute" hidden>
-                            <ul class="project-tags">
-                                <li>Node.js</li>
-                                <li>Express</li>
-                                <li>Leaflet</li>
-                                <li>IndexedDB</li>
-                                <li>Android WebView</li>
-                            </ul>
-                            <ul class="project-notes">
-                                <li>Built AQI-aware EV route planning using OSRM and geocoding APIs.</li>
-                                <li>Created backend endpoints for routing, AQI zones, and EV profile management.</li>
-                                <li>Deployed on Render and integrated a WebView wrapper for Android distribution.</li>
-                                <li>Managed a team of four with WBS planning and decision logs.</li>
-                            </ul>
                         </div>
                     </article>
 
-                    <article class="project-panel open" data-project="ecommerce">
-                        <button class="project-toggle" type="button" aria-expanded="true"
-                            aria-controls="project-content-ecommerce" id="project-trigger-ecommerce">
-                            <span class="project-kicker">Website</span>
-                            <span class="project-title">Ecommerce Website</span>
-                            <span class="project-summary">Node.js commerce workflow with auth, sessions, and secure
-                                checkout patterns.</span>
-                        </button>
-                        <div class="project-content" id="project-content-ecommerce" role="region"
-                            aria-labelledby="project-trigger-ecommerce">
-                            <ul class="project-tags">
-                                <li>Node.js</li>
-                                <li>Express</li>
-                                <li>MongoDB</li>
-                                <li>REST API</li>
-                            </ul>
-                            <ul class="project-notes">
-                                <li>Led a team of four to deliver the end-to-end ecommerce experience.</li>
-                                <li>Built authentication and cart session logic for account-level persistence.</li>
-                                <li>Implemented API-level anti-bot protection using reCAPTCHA.</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <article class="project-panel" data-project="network">
-                        <button class="project-toggle" type="button" aria-expanded="false"
-                            aria-controls="project-content-network" id="project-trigger-network">
-                            <span class="project-kicker">Systems Design</span>
-                            <span class="project-title">Virtual Network Design</span>
-                            <span class="project-summary">Scalable network topology and subnet strategy for
-                                multi-floor enterprise operations.</span>
-                        </button>
-                        <div class="project-content" id="project-content-network" role="region"
-                            aria-labelledby="project-trigger-network" hidden>
-                            <ul class="project-tags">
-                                <li>Cisco Packet Tracer</li>
-                                <li>Subnetting</li>
-                                <li>Network Planning</li>
-                            </ul>
-                            <ul class="project-notes">
-                                <li>Designed a virtual network architecture for a four-story building environment.</li>
-                                <li>Configured gateways, interfaces, and addressing strategy for wired devices.</li>
-                                <li>Planned for 135 users with up to 30% growth capacity.</li>
-                            </ul>
+                    <article class="project" data-reveal>
+                        <h3 class="project-heading">
+                            <button class="project-toggle" type="button" aria-expanded="false"
+                                aria-controls="project-network-body" id="project-network-trigger">
+                                <span class="project-kicker">Systems Design</span>
+                                <span class="project-title">Virtual Network Design</span>
+                                <span class="project-summary">Scalable network topology and subnet strategy for
+                                    multi-floor enterprise operations.</span>
+                                <span class="project-cue" aria-hidden="true"></span>
+                            </button>
+                        </h3>
+                        <div class="project-body" id="project-network-body" role="region"
+                            aria-labelledby="project-network-trigger">
+                            <div class="project-body-inner">
+                                <ul class="project-tags">
+                                    <li>Cisco Packet Tracer</li>
+                                    <li>Subnetting</li>
+                                    <li>Network Planning</li>
+                                </ul>
+                                <ul class="project-notes">
+                                    <li>Designed a virtual network architecture for a four-story building environment.
+                                    </li>
+                                    <li>Configured gateways, interfaces, and addressing strategy for wired devices.
+                                    </li>
+                                    <li>Planned for 135 users with up to 30% growth capacity.</li>
+                                </ul>
+                            </div>
                         </div>
                     </article>
                 </div>
             </section>
 
-            <section id="photography"> <!-- Photography section with gallery layout -->
-                <h2>photography.</h2>
+            <section id="photography" aria-labelledby="photography-title">
+                <h2 id="photography-title" data-reveal>photography.</h2>
 
-                <div class="camera-info">
-                    <div class="camera-card">
-                        <div class="camera-stat">
-                            <span class="stat-label">Camera</span>
-                            <span class="stat-value">Canon EOS 1500D</span>
-                        </div>
-                        <div class="camera-stat">
-                            <span class="stat-label">Lenses</span>
-                            <span class="stat-value">EF-S 18-55mm III<br>EF-S 17-85mm IS USM</span>
-                        </div>
-                        <div class="camera-stat">
-                            <span class="stat-label">Focus</span>
-                            <span class="stat-value">Urban & Landscape</span>
-                        </div>
-                    </div>
+                <div class="photo-featured" data-reveal>
+                    <figure class="photo-featured-figure">
+                        <a class="photo-link" href="imgs/catalog/opt/IMG_3056-2400.jpg" data-lightbox
+                            data-caption="Landmark 81 - HCMC">
+                            <img src="imgs/catalog/opt/IMG_3056-1600.jpg"
+                                srcset="imgs/catalog/opt/IMG_3056-1600.jpg 1600w, imgs/catalog/opt/IMG_3056-2400.jpg 2400w"
+                                sizes="(max-width: 760px) 92vw, 420px" width="1600" height="2400"
+                                alt="Landmark 81 - HCMC" decoding="async">
+                        </a>
+                        <figcaption class="photo-featured-caption">Landmark 81 - HCMC</figcaption>
+                    </figure>
+
+                    <dl class="camera-gear">
+                        <dt>Camera</dt>
+                        <dd>Canon EOS 1500D</dd>
+                        <dt>Lenses</dt>
+                        <dd>EF-S 18-55mm III<br>EF-S 17-85mm IS USM</dd>
+                        <dt>Focus</dt>
+                        <dd>Urban &amp; Landscape</dd>
+                    </dl>
                 </div>
 
                 <div class="gallery">
                     <div class="gallery-item">
-                        <img class="gallery-img" data-src="imgs/catalog/IMG_3056.jpg" alt="Landmark 81 - HCMC"
-                            data-caption="Landmark 81 - HCMC">
-                        <div class="gallery-caption">Landmark 81 - HCMC</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img class="gallery-img" data-src="imgs/catalog/IMG_3042.jpg" alt="District 1 - HCMC"
+                        <a class="photo-link" href="imgs/catalog/opt/IMG_3042-2400.jpg" data-lightbox
                             data-caption="District 1 - HCMC">
-                        <div class="gallery-caption">District 1 - HCMC</div>
+                            <img src="imgs/catalog/opt/IMG_3042-800.jpg"
+                                srcset="imgs/catalog/opt/IMG_3042-800.jpg 800w, imgs/catalog/opt/IMG_3042-1600.jpg 1600w"
+                                sizes="(max-width: 700px) 46vw, (max-width: 1100px) 30vw, 250px" width="800"
+                                height="1200" alt="District 1 - HCMC" loading="lazy" decoding="async">
+                            <span class="gallery-caption">District 1 - HCMC</span>
+                        </a>
                     </div>
                     <div class="gallery-item">
-                        <img class="gallery-img" data-src="imgs/catalog/IMG_2985-4.jpg" alt="China Town - HCMC"
+                        <a class="photo-link" href="imgs/catalog/opt/IMG_2985-4-2400.jpg" data-lightbox
                             data-caption="China Town - HCMC">
-                        <div class="gallery-caption">China Town - HCMC</div>
+                            <img src="imgs/catalog/opt/IMG_2985-4-800.jpg"
+                                srcset="imgs/catalog/opt/IMG_2985-4-800.jpg 800w, imgs/catalog/opt/IMG_2985-4-1600.jpg 1600w"
+                                sizes="(max-width: 700px) 46vw, (max-width: 1100px) 30vw, 250px" width="800"
+                                height="1200" alt="China Town - HCMC" loading="lazy" decoding="async">
+                            <span class="gallery-caption">China Town - HCMC</span>
+                        </a>
                     </div>
                     <div class="gallery-item">
-                        <img class="gallery-img" data-src="imgs/catalog/IMG_2789-3.jpg" alt="Cloud Forest - Singapore"
+                        <a class="photo-link" href="imgs/catalog/opt/IMG_2789-3-2400.jpg" data-lightbox
                             data-caption="Cloud Forest - Singapore">
-                        <div class="gallery-caption">Cloud Forest - Singapore</div>
+                            <img src="imgs/catalog/opt/IMG_2789-3-800.jpg"
+                                srcset="imgs/catalog/opt/IMG_2789-3-800.jpg 800w, imgs/catalog/opt/IMG_2789-3-1600.jpg 1600w"
+                                sizes="(max-width: 700px) 46vw, (max-width: 1100px) 30vw, 250px" width="800"
+                                height="1000" alt="Cloud Forest - Singapore" loading="lazy" decoding="async">
+                            <span class="gallery-caption">Cloud Forest - Singapore</span>
+                        </a>
                     </div>
                     <div class="gallery-item">
-                        <img class="gallery-img" data-src="imgs/catalog/IMG_2625-2.jpg"
-                            alt="Gardens by the Bay - Singapore" data-caption="Gardens by the Bay - Singapore">
-                        <div class="gallery-caption">Gardens by the Bay - Singapore</div>
+                        <a class="photo-link" href="imgs/catalog/opt/IMG_2625-2-2400.jpg" data-lightbox
+                            data-caption="Gardens by the Bay - Singapore">
+                            <img src="imgs/catalog/opt/IMG_2625-2-800.jpg"
+                                srcset="imgs/catalog/opt/IMG_2625-2-800.jpg 800w, imgs/catalog/opt/IMG_2625-2-1600.jpg 1600w"
+                                sizes="(max-width: 700px) 46vw, (max-width: 1100px) 30vw, 250px" width="800"
+                                height="1000" alt="Gardens by the Bay - Singapore" loading="lazy" decoding="async">
+                            <span class="gallery-caption">Gardens by the Bay - Singapore</span>
+                        </a>
                     </div>
                     <div class="gallery-item">
-                        <img class="gallery-img" data-src="imgs/catalog/IMG_1373.jpg"
-                            alt="Caulfield Station - Melbourne" data-caption="Caulfield Station - Melbourne">
-                        <div class="gallery-caption">Caulfield Station - Melbourne</div>
+                        <a class="photo-link" href="imgs/catalog/opt/IMG_1373-2400.jpg" data-lightbox
+                            data-caption="Caulfield Station - Melbourne">
+                            <img src="imgs/catalog/opt/IMG_1373-800.jpg"
+                                srcset="imgs/catalog/opt/IMG_1373-800.jpg 800w, imgs/catalog/opt/IMG_1373-1600.jpg 1600w"
+                                sizes="(max-width: 700px) 46vw, (max-width: 1100px) 30vw, 250px" width="800"
+                                height="533" alt="Caulfield Station - Melbourne" loading="lazy" decoding="async">
+                            <span class="gallery-caption">Caulfield Station - Melbourne</span>
+                        </a>
                     </div>
                     <div class="gallery-item">
-                        <img class="gallery-img" data-src="imgs/catalog/IMG_2859-3.jpg"
-                            alt="Botanical Gardens - Singapore" data-caption="Botanical Gardens - Singapore">
-                        <div class="gallery-caption">Botanical Gardens - Singapore</div>
+                        <a class="photo-link" href="imgs/catalog/opt/IMG_2859-3-2400.jpg" data-lightbox
+                            data-caption="Botanical Gardens - Singapore">
+                            <img src="imgs/catalog/opt/IMG_2859-3-800.jpg"
+                                srcset="imgs/catalog/opt/IMG_2859-3-800.jpg 800w, imgs/catalog/opt/IMG_2859-3-1600.jpg 1600w"
+                                sizes="(max-width: 700px) 46vw, (max-width: 1100px) 30vw, 250px" width="800"
+                                height="1000" alt="Botanical Gardens - Singapore" loading="lazy" decoding="async">
+                            <span class="gallery-caption">Botanical Gardens - Singapore</span>
+                        </a>
                     </div>
                     <div class="gallery-item">
-                        <img class="gallery-img" data-src="imgs/catalog/IMG_3026.jpg" alt="Metropole Thủ Thiêm - HCMC"
+                        <a class="photo-link" href="imgs/catalog/opt/IMG_3026-2400.jpg" data-lightbox
                             data-caption="Metropole Thủ Thiêm - HCMC">
-                        <div class="gallery-caption">Metropole Thủ Thiêm - HCMC</div>
+                            <img src="imgs/catalog/opt/IMG_3026-800.jpg"
+                                srcset="imgs/catalog/opt/IMG_3026-800.jpg 800w, imgs/catalog/opt/IMG_3026-1600.jpg 1600w"
+                                sizes="(max-width: 700px) 46vw, (max-width: 1100px) 30vw, 250px" width="800"
+                                height="1200" alt="Metropole Thủ Thiêm - HCMC" loading="lazy" decoding="async">
+                            <span class="gallery-caption">Metropole Thủ Thiêm - HCMC</span>
+                        </a>
                     </div>
                 </div>
             </section>
-        </div>
 
-        <footer>
-            <p>&copy; 2026 Ma Thanh Long Mason. All rights reserved.</p>
-        </footer>
+            <section id="travel" aria-labelledby="travel-title">
+                <h2 id="travel-title" data-reveal>travel.</h2>
+                <div class="travel-summary" data-reveal>
+                    <p class="travel-visited">
+                        <span class="travel-label">Visited</span>
+                        Ho Chi Minh City, Vietnam · Melbourne, Australia · Singapore
+                    </p>
+                    <a class="button" href="#travel-modal" data-travel-open>Open travel wishlist</a>
+                </div>
+            </section>
+
+        </div>
     </main>
 
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="lightbox">
-        <div class="lightbox-overlay"></div>
-        <div class="lightbox-content">
-            <img id="lightbox-image" src="" alt="Full-size photo">
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p class="footer-name">Mason Ma</p>
+            <ul class="footer-links">
+                <li>
+                    <a href="https://masonn-ma.github.io/coursework-reports" target="_blank"
+                        rel="noopener noreferrer">Academic Archive</a>
+                </li>
+                <li><a href="mailto:masonma2005@gmail.com">Email</a></li>
+                <li><a href="https://github.com/masonn-ma" target="_blank" rel="me noopener noreferrer">GitHub</a>
+                </li>
+                <li><a href="https://www.linkedin.com/in/mason-ma-433324335" target="_blank"
+                        rel="me noopener noreferrer">LinkedIn</a></li>
+                <li><a href="https://www.instagram.com/mason.captures/" target="_blank"
+                        rel="noopener noreferrer">Instagram</a></li>
+            </ul>
+            <p class="footer-copy">&copy; 2026 Ma Thanh Long Mason. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Photo viewer -->
+    <div id="lightbox" class="dialog lightbox">
+        <div class="dialog-backdrop" data-dialog-close></div>
+        <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Photo viewer">
+            <button class="dialog-close" type="button" data-dialog-close aria-label="Close photo viewer">&#x2715;</button>
+            <img id="lightbox-image" src="" alt="">
+            <p class="lightbox-caption" id="lightbox-caption"></p>
         </div>
     </div>
 
-    <!-- Travel List Popup -->
-    <div id="travel-modal" class="travel-modal" aria-hidden="true">
-        <div class="travel-modal-overlay"></div>
-        <div class="travel-modal-content" role="dialog" aria-modal="true" aria-labelledby="travel-modal-title">
-            <button id="travel-modal-close" class="travel-modal-close" type="button"
-                aria-label="Close travel list">&#x2715;</button>
-            <h2 id="travel-modal-title" style="margin-bottom: 10px;">My Travel List</h2>
+    <!-- Travel wishlist -->
+    <div id="travel-modal" class="dialog travel-modal">
+        <div class="dialog-backdrop" data-dialog-close></div>
+        <div class="travel-panel" role="dialog" aria-modal="true" aria-labelledby="travel-modal-title">
+            <a class="dialog-close" href="#travel" data-dialog-close aria-label="Close travel list">&#x2715;</a>
+            <h2 id="travel-modal-title">My Travel List</h2>
             <ul class="travel-list">
                 <li class="travel-item visited">Ho Chi Minh City, Vietnam</li>
                 <li class="travel-item visited">Melbourne, Australia</li>
@@ -570,26 +422,6 @@
             </ul>
         </div>
     </div>
-
-    <!-- Section Navigation Dots -->
-    <nav class="section-nav">
-        <a href="#about" class="section-dot" data-section="about" data-label="About"
-            aria-label="Go to About Me section"></a>
-        <a href="#education" class="section-dot" data-section="education" data-label="Education"
-            aria-label="Go to Education section"></a>
-        <a href="#projects" class="section-dot" data-section="projects" data-label="Projects"
-            aria-label="Go to Featured Projects section"></a>
-        <a href="#photography" class="section-dot" data-section="photography" data-label="Photography"
-            aria-label="Go to Photography section"></a>
-    </nav>
-
-    <!-- Back to Top Button -->
-    <button class="back-to-top" aria-label="Back to top" title="Back to top">
-        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M6 14.5 12 8.5 18 14.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
-                stroke-linejoin="round" />
-        </svg>
-    </button>
 
     <script type="module" src="js/main.js"></script>
 </body>

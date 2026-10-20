@@ -43,9 +43,9 @@
 Mason Ma's Portfolio is a clean, professional portfolio website designed to showcase IT skills, technical projects, and photography work. The site features a responsive, static design with interactive elements and a modern aesthetic.
 
 - Professional hero section with network animation and contact links
-- Responsive card-based layout for all sections
-- Masonry-style photography gallery with lazy loading and lightbox modal
-- Scroll-based section navigation dots
+- Editorial single-column layout for all sections
+- Responsive photography gallery with native lazy loading and lightbox
+- Sticky top navigation with scroll-spy
 - Mobile-first responsive design
 - No build tools required — pure HTML, CSS, and vanilla JavaScript
 
@@ -81,7 +81,14 @@ This repository contains a static portfolio website hosted on GitHub Pages. The 
 │   ├── layout.css
 │   └── components.css
 ├── js/
-│   └── main.js
+│   ├── main.js
+│   ├── dialog.js
+│   ├── gallery.js
+│   ├── hero-canvas.js
+│   ├── project-panels.js
+│   ├── reveal.js
+│   ├── section-navigation.js
+│   └── travel-modal.js
 ├── imgs/
 │   ├── catalog/
 │   ├── favicons/
@@ -91,7 +98,7 @@ This repository contains a static portfolio website hosted on GitHub Pages. The 
 
 - `index.html` is the main entry point and contains all page content.
 - `css/` contains styling split across base, layout, and component files.
-- `js/main.js` handles interactive behavior and animations.
+- `js/` is split into small modules (hero canvas, dialogs, gallery, reveals, nav scroll-spy); `main.js` orchestrates them.
 - `imgs/` stores all images including favicons, logos, and photography gallery.
 
 <p align="right"><a href="#readme-top">back to top</a></p>
@@ -152,7 +159,7 @@ Verification:
 - **Colors & Typography**: Adjust base styles in `css/base.css` (fonts, primary/accent colors, sizing).
 - **Layout & Spacing**: Modify layout rules in `css/layout.css` (grid, sections, responsive breakpoints).
 - **Components**: Customize cards, buttons, skill tags, and galleries in `css/components.css`.
-- **Interactivity**: Edit hero canvas animation, section navigation dots, lightbox, and lazy loading in `js/main.js`.
+- **Interactivity**: Edit hero canvas animation, nav scroll-spy, lightbox, and dialogs across the modules in `js/`.
 - **Images**: Replace or add images in `imgs/` and update corresponding entries in the gallery or metadata.
 
 <p align="right"><a href="#readme-top">back to top</a></p>
@@ -164,11 +171,18 @@ Verification:
 ├── index.html              # Main entry point and page content
 ├── README.md               # This file
 ├── css/
-│   ├── base.css            # Base styles, colors, typography
-│   ├── layout.css          # Layout, grid, responsive breakpoints
-│   └── components.css      # Reusable components (cards, buttons, etc.)
+│   ├── base.css            # Tokens, reset, typography, motion foundations
+│   ├── layout.css          # Nav, hero, section rhythm, footer
+│   └── components.css      # Sections, projects, gallery, dialogs
 ├── js/
-│   └── main.js             # Interactive behavior and animations
+│   ├── main.js             # Orchestrator
+│   ├── dialog.js           # Shared modal focus trap / scroll lock
+│   ├── gallery.js          # Photo lightbox
+│   ├── hero-canvas.js      # Hero network signature
+│   ├── project-panels.js   # Project accordion
+│   ├── reveal.js           # One-time scroll reveals
+│   ├── section-navigation.js # Nav scroll-spy
+│   └── travel-modal.js     # Travel wishlist dialog
 └── imgs/
     ├── catalog/            # Photography gallery images
     ├── favicons/           # Favicon assets
@@ -182,12 +196,11 @@ Verification:
 
 - **Hero Section**: Network animation canvas with contact links and social profiles.
 - **Responsive Design**: Mobile-first layout that adapts to all screen sizes.
-- **Section Navigation**: Sticky dots for quick navigation between sections.
-- **Photography Gallery**: Masonry grid with lazy loading and lightbox modal.
-- **Skill Showcase**: Organized skill cards for frontend, backend, databases, security, languages, and tools.
-- **Project Cards**: Detailed project cards with technologies and key achievements.
-- **Back-to-Top Button**: Easy navigation for long pages.
-- **Accessibility**: Semantic HTML, ARIA labels, and keyboard navigation support.
+- **Section Navigation**: Sticky top nav with scroll-spy highlighting the current section.
+- **Photography Gallery**: Responsive grid with native lazy loading and an accessible lightbox.
+- **Skills**: Grouped skill lists covering security stack, web stack, and tools & languages.
+- **Project Rows**: Expandable editorial project rows with technologies and key achievements.
+- **Accessibility**: Semantic HTML, ARIA state on dialogs/accordions, focus management, and full keyboard support.
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 

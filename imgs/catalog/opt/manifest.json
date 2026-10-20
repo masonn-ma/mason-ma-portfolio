@@ -1,0 +1,170 @@
+[
+  {
+    "file": "IMG_1373.jpg",
+    "original": {
+      "width": 6000,
+      "height": 4000
+    },
+    "variants": [
+      {
+        "target": 1600,
+        "width": 1600,
+        "height": 1067,
+        "file": "IMG_1373-1600.jpg"
+      },
+      {
+        "target": 2400,
+        "width": 2400,
+        "height": 1600,
+        "file": "IMG_1373-2400.jpg"
+      }
+    ]
+  },
+  {
+    "file": "IMG_2625-2.jpg",
+    "original": {
+      "width": 4000,
+      "height": 5000
+    },
+    "variants": [
+      {
+        "target": 1600,
+        "width": 1600,
+        "height": 2000,
+        "file": "IMG_2625-2-1600.jpg"
+      },
+      {
+        "target": 2400,
+        "width": 2400,
+        "height": 3000,
+        "file": "IMG_2625-2-2400.jpg"
+      }
+    ]
+  },
+  {
+    "file": "IMG_2789-3.jpg",
+    "original": {
+      "width": 4000,
+      "height": 5000
+    },
+    "variants": [
+      {
+        "target": 1600,
+        "width": 1600,
+        "height": 2000,
+        "file": "IMG_2789-3-1600.jpg"
+      },
+      {
+        "target": 2400,
+        "width": 2400,
+        "height": 3000,
+        "file": "IMG_2789-3-2400.jpg"
+      }
+    ]
+  },
+  {
+    "file": "IMG_2859-3.jpg",
+    "original": {
+      "width": 4000,
+      "height": 5000
+    },
+    "variants": [
+      {
+        "target": 1600,
+        "width": 1600,
+        "height": 2000,
+        "file": "IMG_2859-3-1600.jpg"
+      },
+      {
+        "target": 2400,
+        "width": 2400,
+        "height": 3000,
+        "file": "IMG_2859-3-2400.jpg"
+      }
+    ]
+  },
+  {
+    "file": "IMG_2985-4.jpg",
+    "original": {
+      "width": 3896,
+      "height": 5844
+    },
+    "variants": [
+      {
+        "target": 1600,
+        "width": 1600,
+        "height": 2400,
+        "file": "IMG_2985-4-1600.jpg"
+      },
+      {
+        "target": 2400,
+        "width": 2400,
+        "height": 3600,
+        "file": "IMG_2985-4-2400.jpg"
+      }
+    ]
+  },
+  {
+    "file": "IMG_3026.jpg",
+    "original": {
+      "width": 3117,
+      "height": 4675
+    },
+    "variants": [
+      {
+        "target": 1600,
+        "width": 1600,
+        "height": 2400,
+        "file": "IMG_3026-1600.jpg"
+      },
+      {
+        "target": 2400,
+        "width": 2400,
+        "height": 3600,
+        "file": "IMG_3026-2400.jpg"
+      }
+    ]
+  },
+  {
+    "file": "IMG_3042.jpg",
+    "original": {
+      "width": 4000,
+      "height": 6000
+    },
+    "variants": [
+      {
+        "target": 1600,
+        "width": 1600,
+        "height": 2400,
+        "file": "IMG_3042-1600.jpg"
+      },
+      {
+        "target": 2400,
+        "width": 2400,
+        "height": 3600,
+        "file": "IMG_3042-2400.jpg"
+      }
+    ]
+  },
+  {
+    "file": "IMG_3056.jpg",
+    "original": {
+      "width": 3030,
+      "height": 4545
+    },
+    "variants": [
+      {
+        "target": 1600,
+        "width": 1600,
+        "height": 2400,
+        "file": "IMG_3056-1600.jpg"
+      },
+      {
+        "target": 2400,
+        "width": 2400,
+        "height": 3600,
+        "file": "IMG_3056-2400.jpg"
+      }
+    ]
+  }
+]

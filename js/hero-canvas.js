@@ -1,3 +1,7 @@
+const ACCENT = 'rgba(131, 174, 221, 0.85)';
+const NODE = 'rgba(233, 237, 244, 0.72)';
+const LINE = '233, 237, 244';
+
 export function initHeroCanvas() {
     const canvas = document.getElementById('hero-network');
 
@@ -6,23 +10,25 @@ export function initHeroCanvas() {
     }
 
     try {
-        const heroSection = canvas.closest('header');
+        const heroSection = canvas.closest('.hero');
         const ctx = canvas.getContext('2d');
+
+        if (!ctx) {
+            throw new Error('Canvas 2D context is unavailable.');
+        }
+
         const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         const lowPowerMode = motionPreference
             || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4)
             || (navigator.deviceMemory && navigator.deviceMemory <= 4)
             || (navigator.connection && navigator.connection.saveData);
+
         let particles = [];
         let canvasWidth = 0;
         let canvasHeight = 0;
         let animationFrameId = null;
-        let scrollFrameId = null;
         let lastFrameTime = 0;
-
-        if (!ctx) {
-            throw new Error('Canvas 2D context is unavailable.');
-        }
+        let inView = true;
 
         const particleCountConfig = lowPowerMode
             ? { min: 22, max: 56, divisor: 25000 }
@@ -36,7 +42,8 @@ export function initHeroCanvas() {
             y: Math.random() * canvasHeight,
             vx: (Math.random() - 0.5) * (lowPowerMode ? 0.2 : 0.28),
             vy: (Math.random() - 0.5) * (lowPowerMode ? 0.2 : 0.28),
-            radius: Math.random() * 1.8 + 1.1
+            radius: Math.random() * 1.8 + 1.1,
+            accent: Math.random() < 0.14
         });
 
         const setCanvasSize = () => {
@@ -79,7 +86,7 @@ export function initHeroCanvas() {
 
                 ctx.beginPath();
                 ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(255, 255, 255, 0.78)';
+                ctx.fillStyle = particle.accent ? ACCENT : NODE;
                 ctx.fill();
             }
 
@@ -90,19 +97,33 @@ export function initHeroCanvas() {
                     const distance = Math.sqrt((dx * dx) + (dy * dy));
 
                     if (distance < connectionDistance) {
-                        const opacity = (1 - (distance / connectionDistance)) * 0.26;
+                        const opacity = (1 - (distance / connectionDistance)) * 0.22;
                         ctx.beginPath();
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.strokeStyle = `rgba(255, 255, 255, ${opacity.toFixed(3)})`;
+                        ctx.strokeStyle = `rgba(${LINE}, ${opacity.toFixed(3)})`;
                         ctx.lineWidth = 1;
                         ctx.stroke();
                     }
                 }
             }
 
-            if (!motionPreference) {
+            if (!motionPreference && inView) {
                 animationFrameId = window.requestAnimationFrame(drawScene);
+            }
+        };
+
+        const start = () => {
+            if (motionPreference || animationFrameId) {
+                return;
+            }
+            animationFrameId = window.requestAnimationFrame(drawScene);
+        };
+
+        const stop = () => {
+            if (animationFrameId) {
+                window.cancelAnimationFrame(animationFrameId);
+                animationFrameId = null;
             }
         };
 
@@ -113,11 +134,7 @@ export function initHeroCanvas() {
 
         const resizeCanvas = () => {
             canvasResizeFrameId = null;
-
-            if (animationFrameId) {
-                window.cancelAnimationFrame(animationFrameId);
-            }
-
+            stop();
             setCanvasSize();
             drawScene();
         };
@@ -137,23 +154,26 @@ export function initHeroCanvas() {
             canvasResizeObserver.observe(canvas);
         }
 
-        const updateHeroVisibility = () => {
-            const hideThreshold = window.innerHeight * 0.18;
+        if ('IntersectionObserver' in window && heroSection) {
+            const viewObserver = new IntersectionObserver((entries) => {
+                inView = entries.some((entry) => entry.isIntersecting);
 
-            if (heroSection) {
-                heroSection.classList.toggle('hero-content-hidden', window.scrollY > hideThreshold);
+                if (inView) {
+                    start();
+                } else {
+                    stop();
+                }
+            });
+            viewObserver.observe(heroSection);
+        }
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                stop();
+            } else if (inView) {
+                start();
             }
-
-            scrollFrameId = null;
-        };
-
-        window.addEventListener('scroll', () => {
-            if (!scrollFrameId) {
-                scrollFrameId = window.requestAnimationFrame(updateHeroVisibility);
-            }
-        }, { passive: true });
-
-        updateHeroVisibility();
+        });
     } catch (error) {
         console.warn('Hero canvas disabled:', error);
     }
